@@ -1,154 +1,756 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A study hub for IB Psychology SL, first assessment 2027.">
-  <title>Petal Psychology | IB Psychology SL</title>
+  <meta name="description" content="Finance — an interactive finance and accounting learning hub.">
+
+  <title>Finance | Finance Learning Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="header">
-    <a class="logo" href="#home">petal<span>.</span></a>
+
+  <aside class="sidebar" id="sidebar">
+
+    <a class="brand" href="#home">
+      <span class="brand-mark">F</span>
+      <span>
+        Finance
+        <small>BUSINESS & ACCOUNTS</small>
+      </span>
+    </a>
+
+    <p class="side-label">LEARN</p>
+
     <nav>
-      <a href="#home">Home</a>
-      <a href="#units">Units</a>
-      <a href="#papers">Exam preparation</a>
+      <a class="nav-link active" href="#home" data-section="home">
+        <span>⌂</span> Overview
+      </a>
+
+      <a class="nav-link" href="#syllabus" data-section="syllabus">
+        <span>▤</span> Finance library
+      </a>
+
+      <a class="nav-link" href="#calculators" data-section="calculators">
+        <span>▦</span> Financial calculators
+      </a>
+
+      <a class="nav-link" href="#graphs" data-section="graphs">
+        <span>⌁</span> Interactive graphs
+      </a>
+
+      <a class="nav-link" href="#practice" data-section="practice">
+        <span>✎</span> Exam practice
+      </a>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <span class="eyebrow">IB DIPLOMA PROGRAMME · FIRST ASSESSMENT 2027</span>
-        <h1>Understand the mind.<br><em>Understand people.</em></h1>
+    <div class="sidebar-bottom">
+
+      <div class="mini-card">
+        <span class="eyebrow">YOUR LEARNING SPACE</span>
+        <p>Understand the numbers behind business decisions.</p>
+        <a href="#syllabus" data-go="syllabus">Start learning →</a>
+      </div>
+
+      <span class="copyright">
+        © 2026 Finance · Independent learning project
+      </span>
+
+    </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <button class="menu-button" id="menuButton">
+        ☰
+      </button>
+
+      <div class="breadcrumb">
+        FINANCE & ACCOUNTS
+        <span>/</span>
+        <strong id="currentPage">OVERVIEW</strong>
+      </div>
+
+      <div class="top-actions">
+        <span class="status-dot"></span>
+        IBDP BUSINESS MANAGEMENT · HL
+      </div>
+
+    </header>
+
+
+    <!-- HOME PAGE -->
+
+    <section id="home" class="page-section">
+
+      <div class="hero">
+
+        <div class="hero-copy">
+
+          <span class="eyebrow light">
+            THE FINANCE & BUSINESS LEARNING HUB
+          </span>
+
+          <h1>
+            Make sense of
+            <br>
+            <em>the numbers.</em>
+          </h1>
+
+          <p>
+            Explore the financial decisions that shape businesses.
+            Learn the concepts, practise the calculations and see
+            how changing the numbers changes the outcome.
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="button button-coral"
+               href="#syllabus"
+               data-go="syllabus">
+              Explore the library →
+            </a>
+
+            <a class="text-link light-link"
+               href="#calculators"
+               data-go="calculators">
+              Open calculators ↗
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="visual-top">
+            <span>FINANCIAL SNAPSHOT</span>
+            <span class="live-pill">● LIVE MODEL</span>
+          </div>
+
+          <div class="visual-number">$248,500</div>
+
+          <div class="visual-caption">
+            Illustrative annual revenue
+          </div>
+
+          <div class="sparkline">
+            <span style="height:34%"></span>
+            <span style="height:46%"></span>
+            <span style="height:40%"></span>
+            <span style="height:59%"></span>
+            <span style="height:51%"></span>
+            <span style="height:70%"></span>
+            <span style="height:63%"></span>
+            <span style="height:88%"></span>
+            <span style="height:78%"></span>
+            <span style="height:100%"></span>
+          </div>
+
+          <div class="visual-footer">
+            <span>REVENUE TREND</span>
+            <strong>+18.6% <small>illustrative</small></strong>
+          </div>
+
+        </div>
+
+        <div class="hero-decoration">F</div>
+
+      </div>
+
+
+      <div class="welcome-row">
+
+        <div>
+          <span class="eyebrow">YOUR FINANCE TOOLKIT</span>
+
+          <h2>Learn it. Calculate it. Apply it.</h2>
+
+          <p class="muted">
+            A practical guide to the IBDP Business Management
+            Finance and Accounts unit.
+          </p>
+        </div>
+
+        <span class="tag">
+          BUSINESS MANAGEMENT · UNIT 3
+        </span>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+        <a class="feature-card" href="#syllabus" data-go="syllabus">
+          <div class="feature-icon coral-icon">▤</div>
+          <span class="eyebrow">01 / KNOWLEDGE</span>
+          <h3>Finance library</h3>
+          <p>Detailed notes, key terminology, formula explanations and business applications.</p>
+          <span class="card-arrow">Explore topics ↗</span>
+        </a>
+
+        <a class="feature-card" href="#calculators" data-go="calculators">
+          <div class="feature-icon peach-icon">▦</div>
+          <span class="eyebrow">02 / APPLICATION</span>
+          <h3>Financial calculators</h3>
+          <p>Build a profit and loss statement, balance sheet and cash flow forecast.</p>
+          <span class="card-arrow">Open tools ↗</span>
+        </a>
+
+        <a class="feature-card" href="#graphs" data-go="graphs">
+          <div class="feature-icon sage-icon">⌁</div>
+          <span class="eyebrow">03 / VISUALISATION</span>
+          <h3>Interactive graphs</h3>
+          <p>Adjust revenue, costs and other variables to understand financial relationships.</p>
+          <span class="card-arrow">Explore graphs ↗</span>
+        </a>
+
+        <a class="feature-card" href="#practice" data-go="practice">
+          <div class="feature-icon lilac-icon">✎</div>
+          <span class="eyebrow">04 / PREPARATION</span>
+          <h3>Exam practice</h3>
+          <p>Try exam-style questions and compare your work with structured model answers.</p>
+          <span class="card-arrow">Practise now ↗</span>
+        </a>
+
+      </div>
+
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">START HERE</span>
+          <h2>Explore Unit 3</h2>
+        </div>
+
+        <a href="#syllabus" data-go="syllabus" class="text-link">
+          View all topics →
+        </a>
+      </div>
+
+      <div class="topic-preview" id="topicPreview"></div>
+
+
+      <div class="note-banner">
+
+        <div class="note-symbol">✦</div>
+
+        <div>
+          <strong>Finance concept of the day</strong>
+
+          <p>
+            A business can be profitable but still struggle to pay
+            short-term debts. Profitability and liquidity measure
+            different aspects of financial health.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINANCE LIBRARY -->
+
+    <section id="syllabus" class="page-section hidden">
+
+      <div class="page-intro">
+
+        <span class="eyebrow">01 / KNOWLEDGE LIBRARY</span>
+
+        <h1>Finance & <em>accounts.</em></h1>
+
         <p>
-          Your personal study space for IB Psychology SL.
-          Explore psychological theories, understand research,
-          and prepare for your examinations.
+          Explore the Unit 3 syllabus areas. Each topic includes
+          definitions, explanations, formulas where relevant and
+          business context. Check your teacher's guide for the
+          exact depth required for your exam session.
         </p>
-        <a class="primary-button" href="#units">Explore the units →</a>
+
       </div>
-      <div class="hero-flower" aria-hidden="true">✿</div>
+
+      <div class="library-layout">
+
+        <div class="topic-list" id="topicList"></div>
+
+        <article class="topic-content" id="topicContent">
+
+          <div class="empty-state">
+            <span>▤</span>
+            <h2>Select a topic</h2>
+            <p>Choose a syllabus area to explore its concepts and calculations.</p>
+          </div>
+
+        </article>
+
+      </div>
+
     </section>
 
-    <section class="intro section">
-      <span class="eyebrow">YOUR STUDY COMPANION</span>
-      <h2>Psychology, made <em>understandable.</em></h2>
+
+    <!-- CALCULATORS -->
+
+    <section id="calculators" class="page-section hidden">
+
+      <div class="page-intro">
+        <span class="eyebrow">02 / FINANCIAL APPLICATION</span>
+        <h1>Numbers into <em>decisions.</em></h1>
+        <p>
+          Enter your own figures and generate simplified financial
+          statements. All values use the same currency unit.
+        </p>
+      </div>
+
+
+      <div class="tab-row" role="tablist">
+
+        <button class="tab active" data-calctab="pl">
+          Profit & loss
+        </button>
+
+        <button class="tab" data-calctab="bs">
+          Balance sheet
+        </button>
+
+        <button class="tab" data-calctab="cf">
+          Cash flow
+        </button>
+
+      </div>
+
+
+      <!-- PROFIT AND LOSS -->
+
+      <div class="calculator-panel" id="plPanel">
+
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">INCOME STATEMENT</span>
+            <h2>Profit & loss calculator</h2>
+            <p>Measures financial performance over a period of time.</p>
+          </div>
+
+          <span class="tag">PERIOD-BASED</span>
+        </div>
+
+        <div class="input-grid">
+
+          <label>
+            Sales revenue
+            <input type="number" id="plRevenue" value="120000" min="0">
+          </label>
+
+          <label>
+            Cost of sales
+            <input type="number" id="plCogs" value="48000" min="0">
+          </label>
+
+          <label>
+            Operating expenses
+            <input type="number" id="plExpenses" value="32000" min="0">
+          </label>
+
+          <label>
+            Finance costs / interest
+            <input type="number" id="plInterest" value="3000" min="0">
+          </label>
+
+          <label>
+            Tax expense
+            <input type="number" id="plTax" value="7000" min="0">
+          </label>
+
+        </div>
+
+        <button class="button button-dark" id="calculatePL">
+          Calculate statement
+        </button>
+
+        <div class="statement" id="plResult"></div>
+
+      </div>
+
+
+      <!-- BALANCE SHEET -->
+
+      <div class="calculator-panel hidden" id="bsPanel">
+
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">STATEMENT OF FINANCIAL POSITION</span>
+            <h2>Balance sheet calculator</h2>
+            <p>Shows what a business owns and owes at a particular point in time.</p>
+          </div>
+
+          <span class="tag">POINT-IN-TIME</span>
+        </div>
+
+        <div class="input-grid">
+
+          <label>
+            Non-current assets
+            <input type="number" id="bsNca" value="90000" min="0">
+          </label>
+
+          <label>
+            Inventory
+            <input type="number" id="bsInventory" value="18000" min="0">
+          </label>
+
+          <label>
+            Trade receivables
+            <input type="number" id="bsReceivables" value="12000" min="0">
+          </label>
+
+          <label>
+            Cash and cash equivalents
+            <input type="number" id="bsCash" value="10000" min="0">
+          </label>
+
+          <label>
+            Current liabilities
+            <input type="number" id="bsCl" value="16000" min="0">
+          </label>
+
+          <label>
+            Non-current liabilities
+            <input type="number" id="bsNcl" value="35000" min="0">
+          </label>
+
+          <label>
+            Share capital
+            <input type="number" id="bsCapital" value="50000" min="0">
+          </label>
+
+          <label>
+            Retained earnings
+            <input type="number" id="bsRetained" value="29000" min="0">
+          </label>
+
+        </div>
+
+        <button class="button button-dark" id="calculateBS">
+          Calculate statement
+        </button>
+
+        <div class="statement" id="bsResult"></div>
+
+      </div>
+
+
+      <!-- CASH FLOW -->
+
+      <div class="calculator-panel hidden" id="cfPanel">
+
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">CASH FLOW FORECAST</span>
+            <h2>Cash flow calculator</h2>
+            <p>Tracks expected cash movements and the closing cash balance.</p>
+          </div>
+
+          <span class="tag">PERIOD-BASED</span>
+        </div>
+
+        <div class="input-grid">
+
+          <label>
+            Opening cash balance
+            <input type="number" id="cfOpening" value="12000">
+          </label>
+
+          <label>
+            Cash received from customers
+            <input type="number" id="cfReceipts" value="45000">
+          </label>
+
+          <label>
+            Other cash inflows
+            <input type="number" id="cfOtherIn" value="2000">
+          </label>
+
+          <label>
+            Payments to suppliers
+            <input type="number" id="cfSuppliers" value="18000">
+          </label>
+
+          <label>
+            Wages and operating payments
+            <input type="number" id="cfWages" value="12000">
+          </label>
+
+          <label>
+            Other cash outflows
+            <input type="number" id="cfOtherOut" value="5000">
+          </label>
+
+        </div>
+
+        <button class="button button-dark" id="calculateCF">
+          Calculate cash flow
+        </button>
+
+        <div class="statement" id="cfResult"></div>
+
+      </div>
+
+      <p class="disclaimer">
+        Educational model only. These simplified calculators are designed
+        for learning and do not replace full accounting statements or
+        professional financial advice. A balance sheet balances only
+        when the inputs satisfy the accounting equation.
+      </p>
+
+    </section>
+
+
+    <!-- INTERACTIVE GRAPHS -->
+
+    <section id="graphs" class="page-section hidden">
+
+      <div class="page-intro">
+        <span class="eyebrow">03 / VISUAL LEARNING LAB</span>
+        <h1>See how numbers <em>move.</em></h1>
+        <p>
+          Adjust the sliders to explore how changes in financial
+          variables affect business outcomes.
+        </p>
+      </div>
+
+
+      <div class="graph-grid">
+
+        <div class="graph-card wide">
+
+          <div class="graph-title">
+            <div>
+              <span class="eyebrow">MODEL 01</span>
+              <h2>Revenue, costs & profit</h2>
+              <p>Explore how sales volume changes revenue, total costs and profit.</p>
+            </div>
+
+            <span class="tag">LIVE MODEL</span>
+          </div>
+
+          <div class="slider-control">
+            <label for="unitsSlider">
+              Units sold
+              <strong id="unitsValue">1,000</strong>
+            </label>
+            <input type="range" id="unitsSlider" min="0" max="3000" step="50" value="1000">
+          </div>
+
+          <div class="slider-control">
+            <label for="priceSlider">
+              Selling price per unit
+              <strong id="priceValue">$50</strong>
+            </label>
+            <input type="range" id="priceSlider" min="10" max="100" value="50">
+          </div>
+
+          <div class="slider-control">
+            <label for="variableSlider">
+              Variable cost per unit
+              <strong id="variableValue">$25</strong>
+            </label>
+            <input type="range" id="variableSlider" min="5" max="60" value="25">
+          </div>
+
+          <div class="slider-control">
+            <label for="fixedSlider">
+              Total fixed costs
+              <strong id="fixedValue">$15,000</strong>
+            </label>
+            <input type="range" id="fixedSlider" min="0" max="50000" step="500" value="15000">
+          </div>
+
+          <div class="metric-row">
+
+            <div>
+              <small>REVENUE</small>
+              <strong id="metricRevenue">$50,000</strong>
+            </div>
+
+            <div>
+              <small>TOTAL COST</small>
+              <strong id="metricCost">$40,000</strong>
+            </div>
+
+            <div>
+              <small>PROFIT / LOSS</small>
+              <strong id="metricProfit">$10,000</strong>
+            </div>
+
+          </div>
+
+          <canvas id="profitChart" height="115"></canvas>
+
+          <p class="graph-explain" id="profitExplanation">
+            At the current values, revenue exceeds total costs.
+          </p>
+
+        </div>
+
+
+        <div class="graph-card">
+
+          <div class="graph-title">
+            <div>
+              <span class="eyebrow">MODEL 02</span>
+              <h2>Cash balance over time</h2>
+              <p>Change monthly net cash flow.</p>
+            </div>
+          </div>
+
+          <div class="slider-control">
+            <label for="cashChangeSlider">
+              Monthly net cash flow
+              <strong id="cashChangeValue">$2,000</strong>
+            </label>
+
+            <input type="range" id="cashChangeSlider" min="-5000" max="7000" step="250" value="2000">
+          </div>
+
+          <div class="slider-control">
+            <label for="cashStartSlider">
+              Opening balance
+              <strong id="cashStartValue">$10,000</strong>
+            </label>
+
+            <input type="range" id="cashStartSlider" min="0" max="30000" step="1000" value="10000">
+          </div>
+
+          <canvas id="cashChart" height="190"></canvas>
+
+          <p class="graph-explain" id="cashExplanation"></p>
+
+        </div>
+
+
+        <div class="graph-card">
+
+          <div class="graph-title">
+            <div>
+              <span class="eyebrow">MODEL 03</span>
+              <h2>Current ratio</h2>
+              <p>Explore current assets against current liabilities.</p>
+            </div>
+          </div>
+
+          <div class="slider-control">
+            <label for="assetsSlider">
+              Current assets
+              <strong id="assetsValue">$30,000</strong>
+            </label>
+
+            <input type="range" id="assetsSlider" min="5000" max="100000" step="1000" value="30000">
+          </div>
+
+          <div class="slider-control">
+            <label for="liabilitiesSlider">
+              Current liabilities
+              <strong id="liabilitiesValue">$15,000</strong>
+            </label>
+
+            <input type="range" id="liabilitiesSlider" min="5000" max="100000" step="1000" value="15000">
+          </div>
+
+          <div class="ratio-display">
+            <strong id="currentRatioValue">2.00:1</strong>
+            <span>Current ratio</span>
+          </div>
+
+          <canvas id="ratioChart" height="150"></canvas>
+
+          <p class="graph-explain">
+            The current ratio indicates whether current assets can
+            cover short-term liabilities. A higher ratio is not
+            automatically better.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXAM PRACTICE -->
+
+    <section id="practice" class="page-section hidden">
+
+      <div class="page-intro">
+        <span class="eyebrow">04 / EXAM APPLICATION</span>
+        <h1>Practise your <em>thinking.</em></h1>
+        <p>
+          Try these original practice questions. Reveal the model
+          answer after attempting each one.
+        </p>
+      </div>
+
+      <div class="practice-toolbar">
+
+        <div>
+          <span class="eyebrow">QUESTION BANK</span>
+          <h2 id="questionCount">All questions</h2>
+        </div>
+
+        <select id="questionFilter">
+          <option value="all">All topics</option>
+          <option value="3.2">Sources of finance</option>
+          <option value="3.3">Costs and revenues</option>
+          <option value="3.4">Final accounts</option>
+          <option value="3.5">Profitability and liquidity</option>
+          <option value="3.6">Efficiency ratios (HL)</option>
+          <option value="3.7">Cash flow</option>
+          <option value="3.8">Investment appraisal</option>
+          <option value="3.9">Budgets (HL)</option>
+        </select>
+
+      </div>
+
+      <div id="questionList" class="question-list"></div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <div class="brand footer-brand">
+        <span class="brand-mark">F</span>
+        <span>
+          Finance
+          <small>BUSINESS & ACCOUNTS</small>
+        </span>
+      </div>
+
       <p>
-        Go beyond memorising definitions. Learn how psychological
-        processes work, why they happen, how researchers investigate
-        them, and how to construct strong examination answers.
-      </p>
-    </section>
-
-    <section class="section units-section" id="units">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">THE SYLLABUS</span>
-          <h2>Explore the five units</h2>
-        </div>
-        <span class="small-note">Choose a unit to begin studying</span>
-      </div>
-
-      <div class="unit-grid" id="unitGrid">
-        <button class="unit-card active" data-unit="0">
-          <span class="unit-number">01</span>
-          <span class="unit-icon">⌕</span>
-          <strong>Psychological investigations</strong>
-          <span>Research methods, ethics and data</span>
-          <span class="card-arrow">↗</span>
-        </button>
-
-        <button class="unit-card" data-unit="1">
-          <span class="unit-number">02</span>
-          <span class="unit-icon">♡</span>
-          <strong>Health and wellbeing</strong>
-          <span>Stress, health and behaviour</span>
-          <span class="card-arrow">↗</span>
-        </button>
-
-        <button class="unit-card" data-unit="2">
-          <span class="unit-number">03</span>
-          <span class="unit-icon">✿</span>
-          <strong>Human development</strong>
-          <span>How people change over time</span>
-          <span class="card-arrow">↗</span>
-        </button>
-
-        <button class="unit-card" data-unit="3">
-          <span class="unit-number">04</span>
-          <span class="unit-icon">♡</span>
-          <strong>Relationships</strong>
-          <span>Attraction, attachment and social bonds</span>
-          <span class="card-arrow">↗</span>
-        </button>
-
-        <button class="unit-card" data-unit="4">
-          <span class="unit-number">05</span>
-          <span class="unit-icon">✧</span>
-          <strong>Learning and thinking</strong>
-          <span>Memory, cognition and learning</span>
-          <span class="card-arrow">↗</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section study-section" id="study">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">YOUR NOTES</span>
-          <h2 id="unitTitle">Psychological investigations</h2>
-        </div>
-        <span class="unit-tag" id="unitTag">UNIT 01</span>
-      </div>
-
-      <div class="search-wrapper">
-        <span>⌕</span>
-        <input id="searchInput" type="search"
-          placeholder="Search concepts in this unit...">
-      </div>
-
-      <div id="unitContent" class="notes-container">
-        <p>Choose a unit above to explore its notes.</p>
-      </div>
-    </section>
-
-    <section class="paper-section" id="papers">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">EXAM PREPARATION</span>
-          <h2>Prepare with purpose.</h2>
-        </div>
-      </div>
-
-      <p class="paper-intro">
-        Practise applying psychological knowledge, constructing
-        explanations and evaluating research.
+        An independent educational project exploring finance,
+        accounting and business decision-making.
       </p>
 
-      <div class="paper-tabs">
-        <button class="paper-tab active" data-paper="paper1">Paper 1 preparation</button>
-        <button class="paper-tab" data-paper="paper2">Paper 2 preparation</button>
-      </div>
+      <span>© 2026 Finance · Educational use</span>
 
-      <div id="paperContent" class="paper-content"></div>
-    </section>
+    </footer>
 
-    <section class="quote-section">
-      <span>✿</span>
-      <h2>Don't just learn what happens.<br><em>Learn why it happens.</em></h2>
-      <p>Understand the research. Understand the evidence. Build the explanation.</p>
-    </section>
   </main>
 
-  <footer>
-    <a class="logo" href="#home">petal<span>.</span></a>
-    <p>IB Psychology SL · First assessment 2027</p>
-    <p class="footer-small">An independent student study resource. Always check your school's official syllabus and examination guidance.</p>
-  </footer>
+  <script src="script.js"></script>
+
 </body>
 </html>
