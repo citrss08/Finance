@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A professional educational library for learning finance.">
+    <title>Finance / Field Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">FINANCE <span>/</span> FIELD NOTES</a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#library">Library</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+        <p class="eyebrow">AN INDEPENDENT FINANCIAL KNOWLEDGE LIBRARY</p>
+
+        <h1>Understand money.<br>Understand the world.</h1>
+
+        <p class="hero-description">
+            Explore financial concepts, investment banking,
+            financial markets and the principles behind
+            financial decision-making.
+        </p>
+
+        <a href="#library" class="primary-button">Explore the library →</a>
+
+        <div class="hero-bottom">
+            <span>EDUCATION</span>
+            <span>RESEARCH</span>
+            <span>FINANCIAL KNOWLEDGE</span>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Financial knowledge,<br>organised.</h2>
+        </div>
+
+        <p>
+            A structured educational resource designed to
+            make complex financial concepts easier to
+            understand and explore.
+        </p>
+    </section>
+
+    <section class="library" id="library">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">EXPLORE THE COLLECTION</p>
+                <h2>Knowledge Library</h2>
+            </div>
+            <span id="note-count">00 ARTICLES</span>
+        </div>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search finance topics and concepts..."
+                aria-label="Search finance articles"
+            >
+        </div>
+
+        <div class="filters">
+            <button class="filter-button active" data-filter="All">All topics</button>
+            <button class="filter-button" data-filter="Fundamentals">Fundamentals</button>
+            <button class="filter-button" data-filter="Markets">Financial markets</button>
+            <button class="filter-button" data-filter="Banking">Banking</button>
+            <button class="filter-button" data-filter="Corporate Finance">Corporate finance</button>
+        </div>
+
+        <div class="notes-grid" id="notes-grid"></div>
+
+        <p id="empty-message" hidden>
+            No articles found. Try another search.
+        </p>
+
+    </section>
+
+    <section class="about" id="about">
+        <p class="eyebrow">ABOUT THIS PLATFORM</p>
+
+        <h2>Knowledge is the<br><span>foundation.</span></h2>
+
+        <p>
+            Finance / Field Notes is an independent educational
+            project dedicated to exploring financial concepts,
+            markets and institutions.
+        </p>
+
+        <p>
+            The objective is to build a structured library
+            of knowledge for continuous learning.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <a href="#" class="logo">FINANCE <span>/</span> FIELD NOTES</a>
+    <p>AN INDEPENDENT FINANCIAL EDUCATION PROJECT</p>
+    <p>© <span id="year"></span> Finance / Field Notes</p>
+</footer>
+
+<dialog id="article-dialog">
+    <div class="dialog-header">
+        <span>FINANCE / FIELD NOTES</span>
+        <button id="close-dialog" aria-label="Close article">✕</button>
+    </div>
+    <div id="article-content"></div>
+</dialog>
+
+</body>
+</html>
