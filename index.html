@@ -1,27 +1,154 @@
-<section class="panel" data-title="P&amp;L maker" data-c="#E11D74">
-<h2>Income statement (P&amp;L) maker</h2>
-<p>Type in any company's numbers. Everything else is calculated for you.</p>
-<input id="plName" class="nm" type="text" value="My Company" aria-label="Company name">
-<div id="plForm" class="form"></div>
-<div id="plOut"></div>
-<div class="card chart"><canvas id="plChart" width="720" height="340" aria-label="Income statement chart"></canvas></div>
-</section>
 
-<section class="panel" data-title="Balance sheet maker" data-c="#0891B2">
-<h2>Balance sheet maker</h2>
-<p>Enter what the company owns and owes. It checks that assets = liabilities + equity.</p>
-<input id="bsName" class="nm" type="text" value="My Company" aria-label="Company name">
-<div id="bsForm" class="form"></div>
-<div id="bsOut"></div>
-<p><b>Graph:</b> teal bars are assets, orange bars are how they are funded.</p>
-<div class="card chart"><canvas id="bsChart" width="720" height="340" aria-label="Balance sheet chart"></canvas></div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A study hub for IB Psychology SL, first assessment 2027.">
+  <title>Petal Psychology | IB Psychology SL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
 
-<section class="panel" data-title="Cash flow maker" data-c="#65A30D">
-<h2>Cash flow forecast maker</h2>
-<p>Enter your opening cash and the money coming in and going out each month. The default numbers show a month where cash runs out.</p>
-<input id="cfName" class="nm" type="text" value="My Company" aria-label="Company name">
-<div id="cfForm" class="form"></div>
-<div id="cfOut"></div>
-<div class="card chart"><canvas id="cfChart" width="720" height="340" aria-label="Closing cash balance chart"></canvas></div>
-</section>
+<body>
+  <header class="header">
+    <a class="logo" href="#home">petal<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#units">Units</a>
+      <a href="#papers">Exam preparation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">IB DIPLOMA PROGRAMME · FIRST ASSESSMENT 2027</span>
+        <h1>Understand the mind.<br><em>Understand people.</em></h1>
+        <p>
+          Your personal study space for IB Psychology SL.
+          Explore psychological theories, understand research,
+          and prepare for your examinations.
+        </p>
+        <a class="primary-button" href="#units">Explore the units →</a>
+      </div>
+      <div class="hero-flower" aria-hidden="true">✿</div>
+    </section>
+
+    <section class="intro section">
+      <span class="eyebrow">YOUR STUDY COMPANION</span>
+      <h2>Psychology, made <em>understandable.</em></h2>
+      <p>
+        Go beyond memorising definitions. Learn how psychological
+        processes work, why they happen, how researchers investigate
+        them, and how to construct strong examination answers.
+      </p>
+    </section>
+
+    <section class="section units-section" id="units">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE SYLLABUS</span>
+          <h2>Explore the five units</h2>
+        </div>
+        <span class="small-note">Choose a unit to begin studying</span>
+      </div>
+
+      <div class="unit-grid" id="unitGrid">
+        <button class="unit-card active" data-unit="0">
+          <span class="unit-number">01</span>
+          <span class="unit-icon">⌕</span>
+          <strong>Psychological investigations</strong>
+          <span>Research methods, ethics and data</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="unit-card" data-unit="1">
+          <span class="unit-number">02</span>
+          <span class="unit-icon">♡</span>
+          <strong>Health and wellbeing</strong>
+          <span>Stress, health and behaviour</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="unit-card" data-unit="2">
+          <span class="unit-number">03</span>
+          <span class="unit-icon">✿</span>
+          <strong>Human development</strong>
+          <span>How people change over time</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="unit-card" data-unit="3">
+          <span class="unit-number">04</span>
+          <span class="unit-icon">♡</span>
+          <strong>Relationships</strong>
+          <span>Attraction, attachment and social bonds</span>
+          <span class="card-arrow">↗</span>
+        </button>
+
+        <button class="unit-card" data-unit="4">
+          <span class="unit-number">05</span>
+          <span class="unit-icon">✧</span>
+          <strong>Learning and thinking</strong>
+          <span>Memory, cognition and learning</span>
+          <span class="card-arrow">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section study-section" id="study">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR NOTES</span>
+          <h2 id="unitTitle">Psychological investigations</h2>
+        </div>
+        <span class="unit-tag" id="unitTag">UNIT 01</span>
+      </div>
+
+      <div class="search-wrapper">
+        <span>⌕</span>
+        <input id="searchInput" type="search"
+          placeholder="Search concepts in this unit...">
+      </div>
+
+      <div id="unitContent" class="notes-container">
+        <p>Choose a unit above to explore its notes.</p>
+      </div>
+    </section>
+
+    <section class="paper-section" id="papers">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">EXAM PREPARATION</span>
+          <h2>Prepare with purpose.</h2>
+        </div>
+      </div>
+
+      <p class="paper-intro">
+        Practise applying psychological knowledge, constructing
+        explanations and evaluating research.
+      </p>
+
+      <div class="paper-tabs">
+        <button class="paper-tab active" data-paper="paper1">Paper 1 preparation</button>
+        <button class="paper-tab" data-paper="paper2">Paper 2 preparation</button>
+      </div>
+
+      <div id="paperContent" class="paper-content"></div>
+    </section>
+
+    <section class="quote-section">
+      <span>✿</span>
+      <h2>Don't just learn what happens.<br><em>Learn why it happens.</em></h2>
+      <p>Understand the research. Understand the evidence. Build the explanation.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home">petal<span>.</span></a>
+    <p>IB Psychology SL · First assessment 2027</p>
+    <p class="footer-small">An independent student study resource. Always check your school's official syllabus and examination guidance.</p>
+  </footer>
+</body>
+</html>
