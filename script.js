@@ -354,7 +354,7 @@ const businessName = () =>
   safeText($("businessName")?.value, "Your Business Ltd.");
 
 
-// ---------- NAVIGATION ----------
+// ---------- NAVIGATION ---------- const pages = \["home", "syllabus", "calculators", "graphs", "practice"\]; function showSection(id, updateHash = true) { const target = pages.includes(id) ? id : "home"; document.querySelectorAll(".page-section").forEach(section => { section.classList.toggle("hidden", section.id !== target); }); document.querySelectorAll(".nav-link\[data-section\]").forEach(link => { link.classList.toggle("active", link.dataset.section === target); }); const labels = { home: "OVERVIEW", syllabus: "FINANCE LIBRARY", calculators: "FINANCIAL STATEMENTS", graphs: "INTERACTIVE GRAPHS", practice: "EXAM PRACTICE" }; const currentPage = document.getElementById("currentPage"); if (currentPage) currentPage.textContent = labels\[target\]; document.getElementById("sidebar")?.classList.remove("open"); if (updateHash) { history.replaceState(null, "", \`#${target}\`); } if (target === "graphs") { requestAnimationFrame(() => drawAllGraphs()); } window.scrollTo(0, 0); } // Handles sidebar links, homepage cards and other links to page sections. document.addEventListener("click", event => { const link = event.target.closest("\[data-section\], \[data-go\]"); if (!link) return; event.preventDefault(); showSection(link.dataset.section || link.dataset.go); }); document.getElementById("menuButton")?.addEventListener("click", () => { document.getElementById("sidebar")?.classList.toggle("open"); }); window.addEventListener("hashchange", () => { showSection(location.hash.slice(1), false); });// ---------- NAVIGATION ----------
 
 function showSection(id, updateHash = true) {
 
