@@ -1,111 +1,132 @@
-/* ===== CONTENT: add more notes/questions by copying an object ===== */
-const UNITS = [
-{ id:1, name:"Psychological investigations", blurb:"How psychologists collect evidence, and how far we can trust it.",
- notes:[
- {h:"Experiments and causation", p:"An experiment manipulates an independent variable (IV) and measures the dependent variable (DV) while controlling other variables. Why does this allow cause-and-effect claims? Because random allocation spreads participant differences evenly across conditions, so a difference in the DV is most plausibly due to the IV. Lab experiments give the strongest control (high internal validity) but the setting can be artificial, so findings may not generalise (low ecological validity)."},
- {h:"Sampling", p:"Random sampling gives everyone an equal chance of selection, which reduces bias but is hard to achieve. Convenience sampling is quick, yet it often over-represents students or one culture, so results may not apply to other groups. Why does this matter? A sample that differs from the target population limits population validity."},
- {h:"Reliability and validity", p:"Reliability is consistency: would the same procedure give the same result again? Validity is accuracy: does the study measure what it claims to? A study can be reliable without being valid (a faulty scale that always shows 2 kg too much), but it cannot be valid if it is unreliable."},
- {h:"Ethics", p:"Key principles include informed consent, protection from harm, confidentiality, right to withdraw and debriefing. Why is deception sometimes used? Knowing the real aim can change behaviour (demand characteristics), so researchers weigh the scientific value against the cost to participants and must debrief afterwards."}],
- tips:["Always link a strength or limitation to its effect on the findings, not just name it.","When evaluating a method, use the pattern: point, evidence from a study, consequence for validity or generalisability."],
- qs:[
- {paper:"Paper 1", marks:"Describe", q:"Describe one ethical consideration in psychological research.", how:"Name the consideration, define it, then show how it is applied in practice. Two or three developed points beat a list.", a:"Informed consent means participants are told the purpose, procedure and their rights before agreeing to take part. Researchers usually provide a consent form and explain that participation is voluntary. This respects autonomy and lets people judge risks. For example, in a memory study participants would be told what tasks they will do, and that they can leave at any time without penalty."},
- {paper:"Paper 2", marks:"Evaluate", q:"Evaluate the use of laboratory experiments in psychological research.", how:"Give strengths and limitations, each explained, then a judgement. Use a named study as evidence.", a:"Laboratory experiments allow tight control of extraneous variables, so researchers can establish cause and effect, and standardised procedures make replication easy, which strengthens reliability. However, artificial tasks and settings reduce ecological validity: Loftus and Palmer (1974) showed film clips to students, which lacks the emotion of a real crash, so witnesses may be less accurate in reality than in the lab. Also, demand characteristics may lead participants to guess the aim. Overall, labs are strong for testing causal theories, but should be supported by field research to show findings apply in real life."},
- {paper:"Paper 1", marks:"Explain", q:"Explain why random allocation is used in experiments.", how:"Define it, explain the mechanism, state the consequence for the conclusion.", a:"Random allocation means each participant has an equal chance of being placed in any condition. This spreads individual differences such as age or intelligence evenly across groups. As a result, any difference in the DV is less likely to be caused by participant variables and more likely caused by the IV, increasing internal validity."}]},
-{ id:2, name:"Health and wellbeing", blurb:"Stress, coping and mental health, and why people respond differently.",
- notes:[
- {h:"The biopsychosocial model", p:"This model proposes health is shaped by biological (genes, neurotransmitters), psychological (thoughts, coping) and social (support, culture) factors acting together. Why is it useful? It explains why two people with the same stressor differ, and it guides multi-part treatment. A limitation is that it is hard to test which factor matters most."},
- {h:"Stress and appraisal", p:"Lazarus and Folkman argued that stress depends on appraisal: primary appraisal asks if a situation is a threat, secondary appraisal asks if I can cope. Why does this matter? The same exam can be a challenge for one student and a threat for another, because their perceived resources differ."},
- {h:"The stress response", p:"The body releases adrenaline and cortisol through the sympathetic nervous system and HPA axis, preparing for fight or flight. Short-term, this is adaptive. Chronic activation keeps cortisol high, which is linked to weakened immune function, so long-term stress can raise illness risk."},
- {h:"Resilience and coping", p:"Problem-focused coping tackles the stressor, whereas emotion-focused coping manages feelings. Why is flexibility key? Problem-focused works best when the situation is controllable, and emotion-focused when it is not. Social support can buffer stress by raising perceived coping resources."}],
- tips:["Use correct terms: appraisal, cortisol, HPA axis, biopsychosocial.","For evaluation, mention individual and cultural differences in stress and coping."],
- qs:[
- {paper:"Paper 1", marks:"Outline", q:"Outline the biopsychosocial model of health.", how:"Name the three factors, give an example of each, show that they interact.", a:"The biopsychosocial model states that health and illness result from interaction of biological, psychological and social factors. Biological factors include genetics and hormones, psychological factors include thinking styles and coping, and social factors include family support and socioeconomic status. For example, depression may involve low serotonin, negative thinking and social isolation, which reinforce one another."},
- {paper:"Paper 2", marks:"Discuss", q:"Discuss the role of cognitive appraisal in stress.", how:"Explain the theory, apply it, then offer a counterpoint or limitation, and conclude.", a:"Lazarus and Folkman proposed that stress arises when a person appraises demands as exceeding their resources. In primary appraisal, an event is judged irrelevant, positive or threatening, and in secondary appraisal the person judges coping options. This explains individual differences: two students facing the same exam react differently because of perceived preparation and support. Supporting evidence comes from studies in which reframing a task as a challenge reduces stress responses. However, appraisal is difficult to measure objectively because it relies on self-report, and biological factors such as baseline cortisol also affect stress. Therefore appraisal is a valuable explanation, but not a complete one."}]},
-{ id:3, name:"Human development", blurb:"How thinking, attachment and identity change across life.",
- notes:[
- {h:"Piaget: cognitive development", p:"Piaget proposed that children actively build schemas through assimilation (fitting new information into existing schemas) and accommodation (changing schemas). Why do stages exist? He argued that disequilibrium pushes thinking forward. Limitations: he underestimated young children, and later research shows abilities appear earlier when tasks are simplified."},
- {h:"Vygotsky: social learning", p:"Vygotsky emphasised that learning happens through interaction. The zone of proximal development is the gap between what a child can do alone and with guidance. Why does scaffolding work? Support is matched to the learner and then withdrawn as skill grows."},
- {h:"Attachment", p:"Bowlby argued that infants are biologically prepared to attach, since staying close to a caregiver aids survival. Ainsworth's Strange Situation (1970s) classified secure and insecure attachment. Why is it criticised? It was developed with American samples, so the categories may not apply equally across cultures where child-rearing differs."},
- {h:"Brain development", p:"Neuroplasticity means the brain changes with experience. Maguire et al. (2000) found that London taxi drivers had larger posterior hippocampi, consistent with spatial navigation shaping structure. Why can we not be certain? The study was correlational, so people with larger hippocampi might choose to become taxi drivers."}],
- tips:["Pair every theory with a study and one limitation.","Avoid saying that a study proves something: use supports, suggests or is consistent with."],
- qs:[
- {paper:"Paper 1", marks:"Describe", q:"Describe the process of scaffolding in cognitive development.", how:"Define, give mechanism, then a brief example linked to Vygotsky.", a:"Scaffolding is temporary support from a more knowledgeable person that helps a learner complete tasks just beyond their current ability. It operates within the zone of proximal development. The helper adjusts guidance to the learner, such as modelling or hints, and gradually reduces it as competence grows. For example, a parent first helps a child with a puzzle then lets the child complete it independently."},
- {paper:"Paper 2", marks:"Evaluate", q:"Evaluate one theory of attachment.", how:"Outline the theory with a study, then at least two evaluation points explained, then conclude.", a:"Bowlby's theory proposes that attachment is an innate survival mechanism, with a sensitive period in the first years. Ainsworth's research supports the idea that sensitive caregiving is linked with secure attachment. A strength is that it has had practical impact, shaping hospital and childcare policies. However, the Strange Situation is culturally biased because behaviours such as distress at separation mean different things in different cultures, which limits generalisability. Also, the evidence is correlational, so temperament may influence caregiver behaviour, rather than the reverse. Overall, the theory is influential, but its claims should be applied with caution across cultures."}]},
-{ id:4, name:"Relationships", blurb:"Why people attach, cooperate, conform and form groups.",
- notes:[
- {h:"Personal relationships", p:"Social exchange theory suggests people stay in relationships when rewards outweigh costs. Why is that appealing? It explains commitment in terms of simple cost-benefit logic. A limitation is that it may overlook altruism and cannot easily measure rewards."},
- {h:"Social identity theory", p:"Tajfel proposed that we gain self-esteem from group membership, so we favour the in-group. In the minimal group studies (1971), boys assigned to arbitrary groups still gave more rewards to their own group. Why is this important? It shows that group categorisation alone can trigger bias, though the sample was all male and the setting artificial."},
- {h:"Conformity", p:"Asch (1951) found that participants gave incorrect answers about line lengths in about a third of trials when confederates did so. Why do people conform? Normative influence (wanting acceptance) and informational influence (assuming others know better). The study reflects a particular time and culture (1950s USA), so it may not generalise."},
- {h:"Cooperation and conflict", p:"Sherif's Robbers Cave study suggested that competition produces hostility, while shared goals reduce it. Why does a shared goal help? It makes groups interdependent, which replaces rivalry with cooperation."}],
- tips:["Distinguish normative from informational influence clearly.","Use a study to evidence each claim, and comment on the sample."],
- qs:[
- {paper:"Paper 1", marks:"Outline", q:"Outline social identity theory.", how:"State the three processes (categorisation, identification, comparison) and add a study.", a:"Social identity theory proposes that people categorise themselves and others into groups, identify with their in-group and compare it with out-groups to maintain positive self-esteem. This can create in-group favouritism and discrimination. Tajfel's minimal group research found that even arbitrary groups led participants to allocate more resources to their own group."},
- {paper:"Paper 2", marks:"Discuss", q:"Discuss factors that influence conformity.", how:"Give two or three factors, each with explanation and evidence, then consider limits of the research.", a:"Group size and unanimity affect conformity. In Asch's study conformity rose with up to three confederates, and fell sharply when one confederate disagreed, because the participant gained social support. Another factor is the type of influence: informational influence is stronger when a task is ambiguous, as people rely on others for guidance. Culture also matters, as collectivist societies often show higher conformity. However, much of the research used artificial tasks with students, limiting ecological validity, and the findings reflect the era studied. Therefore these factors are significant, but their effect depends on context."}]},
-{ id:5, name:"Learning and thinking", blurb:"How we learn, remember and make (sometimes faulty) decisions.",
- notes:[
- {h:"Classical and operant conditioning", p:"In classical conditioning, a neutral stimulus paired with an unconditioned stimulus becomes a conditioned stimulus that triggers a response (Pavlov). In operant conditioning, behaviour followed by reinforcement becomes more likely. Why does it matter? It explains habits and phobias, but it underplays thinking."},
- {h:"Social learning", p:"Bandura (1961) found that children who watched an aggressive model imitated it, showing learning without direct reinforcement. Why does imitation happen? Attention, retention, reproduction and motivation. Limitation: a doll such as Bobo is designed to be hit, so the aggression may not reflect real violence."},
- {h:"Memory", p:"The multi-store model describes sensory, short-term and long-term stores. Reconstructive memory (Bartlett) argues that recall is rebuilt using schemas, which explains distortions. Why do eyewitnesses err? Loftus and Palmer (1974) found that the verb in a question (smashed versus hit) changed speed estimates, suggesting that leading questions alter memory."},
- {h:"Thinking and bias", p:"Kahneman distinguished fast, intuitive thinking from slow, effortful thinking. Fast thinking uses heuristics, which are efficient but produce biases such as availability, where we judge likelihood by how easily examples come to mind."}],
- tips:["For memory questions, compare models by what each can and cannot explain.","Mention that lab memory tasks often lack real-life relevance."],
- qs:[
- {paper:"Paper 1", marks:"Explain", q:"Explain how leading questions can affect eyewitness memory.", how:"Give the mechanism, a study, and the consequence.", a:"Leading questions suggest a particular answer and can alter how an event is reconstructed. Loftus and Palmer (1974) asked participants how fast cars were going when they smashed or hit, and the smashed group estimated higher speeds. This suggests that the wording supplied new information that was integrated into memory, so eyewitness testimony can be unreliable."},
- {paper:"Paper 2", marks:"Evaluate", q:"Evaluate the multi-store model of memory.", how:"Outline, give supporting evidence, then limitations and an alternative.", a:"The multi-store model proposes that information flows from sensory to short-term to long-term memory through rehearsal. Case studies of patients with impaired long-term memory but intact short-term memory support separate stores. However, the model is oversimplified, since rehearsal is not the only route to long-term memory and short-term memory is not a single store, as the working memory model suggests. Also, much supporting evidence comes from artificial tasks such as word lists, lowering ecological validity. Overall, the model was influential, but has been refined by later theories."}]}
-];
+const topics = [
+  {
+    n: "3.1",
+    title: "Introduction to finance",
+    level: "SL & HL",
+    intro: "Businesses need finance for different stages of activity: starting up, day-to-day operations, and future growth or expansion. The Oxford course companion introduces the role of finance through two broad types of expenditure: capital expenditure and revenue expenditure.",
+    sections: [
+      ["The role of finance", "Finance makes it possible for an organisation to acquire the resources needed to operate and generate income. A business needs to distinguish between funds used to acquire long-lasting assets and funds used to keep its daily activities running."],
+      ["Capital expenditure", "Capital expenditure is money spent to acquire fixed assets that a business expects to use for more than one year. Examples include machinery, land, buildings, vehicles and equipment. These assets are intended to help the business generate income over the longer term. Because fixed assets can be expensive, they may sometimes be used as collateral when a business seeks finance, such as a bank loan."],
+      ["Revenue expenditure", "Revenue expenditure is money spent on the day-to-day running of a business. Examples include rent, wages, raw materials, insurance and fuel. These costs need to be paid regularly to keep operations running and provide more immediate benefits. Consistently high or poorly controlled revenue expenditure can reduce profit and make it harder to build funds for long-term investment."],
+      ["Why the distinction matters", "Managers need to plan for both types of expenditure. Under-investing in long-term assets can restrict capacity or efficiency, while failing to control routine expenses can weaken profit and leave too little finance available for future investment. The appropriate balance depends on the organisation and its plans."]
+    ],
+    terms: [
+      ["Finance", "Funds required to start, operate, maintain and expand a business."],
+      ["Capital expenditure", "Money spent to acquire fixed assets intended to be used by the business for more than one year."],
+      ["Revenue expenditure", "Money spent on the everyday running of a business, such as rent, wages, raw materials, insurance and fuel."],
+      ["Fixed assets", "Longer-term assets used by a business to help generate income."],
+      ["Collateral", "An asset pledged as security for repayment of a loan or other finance."]
+    ]
+  },
 
-const EXAM = [
- {h:"Paper 1 and Paper 2: what to expect", p:"Check your official guide for exact timings, marks and question types for 2027. In general, expect short-answer questions that test knowledge and understanding, and extended responses that test evaluation with evidence from research."},
- {h:"Command terms", p:"Describe: give a detailed account. Outline: a brief account. Explain: give reasons and causes (the why). Discuss: weigh different views, with evidence. Evaluate: strengths and limitations, ending with a judgement. To what extent: reach a reasoned conclusion about how far something is true."},
- {h:"A reliable paragraph structure", p:"Point (answer the question), Evidence (named study with finding), Explanation (why it supports or limits the point), Link (back to the question)."}
-];
+  {
+    n: "3.2",
+    title: "Sources of finance",
+    level: "SL & HL",
+    intro: "Sources of finance are the ways a business obtains funds. The Oxford course companion distinguishes internal finance, obtained from within the business, from external finance, obtained from outside it. Choosing a source requires the business to consider its purpose, time horizon, cost, flexibility and financial position.",
+    sections: [
+      ["Internal finance", "Personal funds are a major source for sole traders and usually come from personal savings. They can preserve the owner's control, but place personal money at risk and may be insufficient. Retained profit is profit kept in the business rather than distributed; it does not create interest or repayment obligations, but start-ups may not have any and a low level may not fund expansion. Sale of assets means selling unwanted, unused or redundant assets to release cash. It avoids borrowing costs, although finding a buyer can take time and the business gives up the asset."],
+      ["External finance: share capital and loan capital", "Share capital is money raised by selling shares in a limited company. It does not normally require interest payments or repayment like a loan, but shareholders expect a return and issuing shares can dilute existing owners' control. Loan capital is borrowed money that must be repaid, usually with interest. It can provide a substantial amount for investment, but interest and repayments create financial commitments."],
+      ["External finance: overdrafts and trade credit", "An overdraft is an arrangement with a bank or other lender that allows a business to withdraw more money than it has in its account, up to an agreed limit. It is flexible and often used for short-term cash-flow needs, but interest or fees can be high and the facility may be repayable on demand. Trade credit is an agreement that allows a business to receive goods or services and pay the supplier later. It can help working capital, but late payment may damage supplier relationships or result in lost discounts."],
+      ["External finance: crowdfunding, leasing, microfinance and business angels", "Crowdfunding raises funds for a venture or project from many people, often through an online platform. It can reach a large audience, but a campaign may not reach its target and public promotion can expose an idea to competitors. Leasing is an agreement in which a business (the lessee) pays a leasing company (the lessor) to use an asset without buying it outright. It can preserve cash and suit assets needed for limited periods, but total lease payments may exceed the cost of buying. Microfinance providers offer financial services, often including small loans, to people or businesses with limited access to conventional banking. Business angels are wealthy individuals who invest in small start-ups or entrepreneurs in return for an ownership stake; they may also offer experience and contacts, but the owner gives up some equity and influence."],
+      ["Short-term and long-term finance", "Short-term finance is generally needed for day-to-day operations and working capital, and usually lasts for one year or less. Long-term finance is used for long-lived assets or expansion and lasts for more than one year. The exact source should be matched to the use of the funds: a temporary cash-flow gap is different from financing a building or major equipment."],
+      ["Factors when choosing finance", "The Oxford book highlights the purpose or use of funds, cost, the business's status and size, amount required, flexibility, gearing and the state of the external environment. Managers should compare interest, fees, repayment conditions, possible loss of control, and whether the funding period matches the life of the asset or need. A source that is appropriate for one organisation may not suit another."]
+    ],
+    terms: [
+      ["Internal finance", "Funds obtained from within the business or from the owner's own resources."],
+      ["Personal funds", "A sole trader's own savings invested in the business."],
+      ["Retained profit", "Profit kept in the business instead of being distributed to owners."],
+      ["Sale of assets", "Selling unused or unwanted business assets to raise cash."],
+      ["Share capital", "Finance raised by selling shares in a limited company; also called equity capital."],
+      ["Loan capital", "Borrowed finance that must be repaid, normally with interest."],
+      ["Overdraft", "A bank facility allowing a business to withdraw beyond its account balance up to an agreed limit."],
+      ["Trade credit", "An agreement that allows a buyer to pay a supplier at a later date."],
+      ["Crowdfunding", "Funding a venture or project through contributions from a large number of people."],
+      ["Leasing", "Paying a lessor for the right to use an asset without purchasing it outright."],
+      ["Microfinance provider", "An organisation offering financial services to people or businesses with limited access to conventional banking."],
+      ["Business angel", "An affluent individual who invests in a small business in return for an ownership share."],
+      ["Gearing", "The relationship between loan capital and the capital employed by a business."]
+    ]
+  },
 
-/* ===== RENDERING ===== */
-const nav = document.getElementById("units");
-const view = document.getElementById("view");
-const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  {
+    n: "3.3",
+    title: "Costs and revenues",
+    level: "SL & HL · absorption costing HL only",
+    intro: "Costs and revenue are important to a business's financial performance. This chapter classifies costs by how they behave as output changes and whether they can be traced to a particular product, then explains total revenue and other income streams.",
+    sections: [
+      ["Fixed costs", "Fixed costs do not change with the amount of goods or services produced in the short run. They are usually time-related and still have to be paid when output temporarily falls. Examples in the book include rent, insurance, salaries and interest payments. Fixed does not mean that the amount can never change: it means that it does not vary with output over the relevant short-run period."],
+      ["Variable costs", "Variable costs change according to the number of goods or services produced and are linked to the level of business activity. Examples include raw materials, sales commissions, packaging and energy used in production. If no units are produced, output-related variable costs may not be incurred."],
+      ["Direct and indirect costs", "Direct costs can be clearly attributed to producing a particular good or service, product, department or process. Examples include flour used to make bread, direct labour in car production and chicken used by a chicken-focused restaurant. Indirect costs, also called overheads, cannot be directly traced to one specific product or cost centre; examples include premises rent, administration salaries, audit fees, legal expenses, insurance and security. Direct/indirect and fixed/variable are different classifications: a direct cost is not automatically variable, and an indirect cost is not automatically fixed."],
+      ["Total costs", "Total fixed costs added to total variable costs gives total costs. This helps a business understand how total expenditure changes as production or sales activity changes."],
+      ["Total revenue and revenue streams", "Total revenue is the total money a firm receives from sales. It is calculated by multiplying the price per unit by the quantity sold. Sales revenue may include goods sold for cash or on credit, so revenue is not the same as cash received during the period. The book also identifies other revenue streams such as rental income, proceeds from selling fixed assets, dividends received from investments, interest earned on bank deposits and donations received by eligible organisations."],
+      ["Absorption costing (HL only)", "Absorption costing, also called full costing, is a managerial accounting method that assigns all costs associated with producing a product to that product. It includes direct costs, such as materials and labour, and indirect production costs, such as rent and insurance. It can help managers understand the full cost of production, although allocating shared overheads requires a method and assumptions."],
+      ["Descriptive statistics", "The book links financial data with descriptive statistics. Measures such as mean, median and mode can summarise numerical information so that patterns are easier to interpret. Statistics simplify data but do not explain every cause behind a financial result."]
+    ],
+    formulas: [
+      ["Total costs", "Total fixed costs (TFC) + total variable costs (TVC)", "Adds all fixed costs and all variable costs to calculate total expenditure."],
+      ["Total revenue (TR)", "Price per unit (P) × quantity sold (Q)", "Calculates sales revenue from the price charged and the number of units sold. The book abbreviates this as TR = P × Q."],
+      ["Contribution per unit (toolkit link)", "Selling price per unit − variable cost per unit", "Shows how much each unit contributes towards fixed costs and then profit. This is a Business Management toolkit connection rather than a separate main heading in this chapter."],
+      ["Total contribution (toolkit link)", "Total sales revenue − total variable costs", "Shows the contribution from all units sold before fixed costs are deducted."]
+    ],
+    terms: [
+      ["Fixed costs", "Costs that do not change with output in the short run."],
+      ["Variable costs", "Costs that change with the number of goods or services produced."],
+      ["Direct costs", "Costs that can be traced to a specific product, activity, process or cost centre."],
+      ["Indirect costs / overheads", "Costs that cannot be directly attributed to one specific product or cost centre."],
+      ["Revenue", "Money generated from the sale of goods and services."],
+      ["Total revenue / turnover", "Total sales income, calculated as price per unit multiplied by quantity sold."],
+      ["Revenue stream", "A distinct source from which a business receives income."],
+      ["Absorption costing", "A full-costing approach that includes direct and indirect production costs in product cost."]
+    ]
+  },
 
-UNITS.forEach(u => {
-  const b = document.createElement("button");
-  b.className = "unit-btn"; b.dataset.id = u.id;
-  b.innerHTML = "<b>" + u.id + "</b><span>" + esc(u.name) + "</span>";
-  b.addEventListener("click", () => { location.hash = "unit-" + u.id; });
-  nav.appendChild(b);
-});
-document.getElementById("examBtn").addEventListener("click", () => { location.hash = "exam"; });
-
-function card(c, cls) { return '<div class="card ' + (cls||"") + '"><h3>' + esc(c.h) + '</h3><p>' + esc(c.p) + '</p></div>'; }
-
-function showUnit(u, tab) {
-  document.querySelectorAll(".unit-btn").forEach(b => b.classList.toggle("on", +b.dataset.id === u.id));
-  let body = "";
-  if (tab === "notes") {
-    body = u.notes.map(n => card(n)).join("") +
-      u.tips.map(t => '<div class="card tip"><p>' + esc(t) + '</p></div>').join("");
-  } else {
-    const list = tab === "p1" ? u.qs.filter(q => q.paper === "Paper 1") : tab === "p2" ? u.qs.filter(q => q.paper === "Paper 2") : u.qs;
-    body = list.map(q => '<div class="card"><span class="tag">' + q.paper + '</span><span class="tag">' + q.marks + '</span><h3>' + esc(q.q) + '</h3>' +
-      '<details><summary>How to answer</summary><p>' + esc(q.how) + '</p></details>' +
-      '<details><summary>Model answer</summary><div class="model"><p>' + esc(q.a) + '</p></div></details></div>').join("") || "<p>No questions yet.</p>";
-  }
-  const tabs = [["notes","Notes"],["all","All questions"],["p1","Paper 1"],["p2","Paper 2"]]
-    .map(t => '<button data-t="' + t[0] + '" class="' + (t[0] === tab ? "on" : "") + '">' + t[1] + '</button>').join("");
-  view.innerHTML = '<section class="reveal"><h2>Unit ' + u.id + ': ' + esc(u.name) + '</h2><p>' + esc(u.blurb) + '</p><div class="tabs">' + tabs + '</div>' + body + '</section>';
-  view.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => showUnit(u, b.dataset.t)));
-}
-
-function route() {
-  const h = location.hash.slice(1);
-  const m = h.match(/^unit-(\d)$/);
-  if (m) {
-    const u = UNITS.find(x => x.id === +m[1]);
-    if (u) { showUnit(u, "notes"); view.focus({preventScroll:true}); view.scrollIntoView({behavior:"smooth"}); return; }
-  }
-  if (h === "exam") {
-    document.querySelectorAll(".unit-btn").forEach(b => b.classList.remove("on"));
-    view.innerHTML = '<section class="reveal"><h2>Exam guide</h2>' + EXAM.map(e => card(e, "tip")).join("") + '</section>';
-    view.scrollIntoView({behavior:"smooth"}); return;
-  }
-  view.innerHTML = "";
-}
-window.addEventListener("hashchange", route);
-route();
+  {
+    n: "3.4",
+    title: "Final accounts",
+    level: "SL & HL · depreciation HL only",
+    intro: "Final accounts are financial statements compiled at the end of an accounting period. They record transactions, revenue and expenditure, and help internal and external stakeholders assess a business. The Oxford book covers the profit and loss account and the balance sheet, together with depreciation methods at HL.",
+    sections: [
+      ["Why stakeholders use accounts", "Shareholders use accounts to assess the value and performance of the business and its directors. Managers use them to set targets and monitor performance. Employees may use them to judge job security and prospects. Customers may look for signs that a supplier will continue operating. Suppliers assess whether a business can pay for goods and services. Governments and tax authorities check legal and tax compliance. Competitors may benchmark performance. Banks and other financiers assess creditworthiness and the ability to repay loans with interest. Local communities may be interested in the organisation's financial and environmental responsibilities."],
+      ["The profit and loss account (income statement)", "The profit and loss account records income and expenditure over a period. The Oxford book presents it in three linked parts: the trading account, the profit and loss account, and the appropriation account. The trading account calculates gross profit by deducting cost of sales from sales revenue. The profit and loss section deducts indirect expenses to find profit before interest and tax, then deducts interest and tax. The appropriation account shows how profit for the period is distributed between dividends and retained profit. For a non-profit entity, the book uses the term surplus rather than profit, and a retained surplus may be shown."],
+      ["Cost of sales and gross profit", "Cost of sales (also called cost of goods sold) is the direct cost of producing or purchasing the goods sold during the period. The book calculates it using opening stock plus purchases less closing stock. Gross profit is sales revenue less cost of sales."],
+      ["The balance sheet", "The balance sheet, also known as the statement of financial position, is a snapshot of assets, liabilities and equity at a specific point in time. Assets are resources owned by or owed to a business. Liabilities are debts owed to other firms, institutions or people. Equity represents the amount financed by owners and retained earnings. For the statement to balance, total assets must equal total liabilities plus equity."],
+      ["Assets", "Non-current assets (fixed assets) are long-term assets expected to remain in the business for more than 12 months, such as buildings, machinery, vehicles and equipment. Current assets are short-term assets, including cash, debtors (customers who owe money) and stock/inventory. Property, plant and equipment may be shown after accumulated depreciation. The book also introduces intangible assets: non-physical assets such as patents, goodwill, copyright and trademarks."],
+      ["Liabilities and equity", "Current liabilities are short-term debts payable within 12 months, such as trade creditors, bank overdrafts, short-term loans and tax owed. Non-current liabilities are longer-term debts payable after 12 months, such as long-term bank loans and mortgages. Equity includes capital invested by owners and retained earnings. Net assets are calculated by deducting total liabilities from total assets."],
+      ["Accounting ethics", "Accounts should be prepared and checked ethically. The book discusses professional rules, independence and threats such as self-interest and conflicts of interest. Ethical accounting matters because stakeholders rely on financial statements when making decisions. Accountants should act with integrity and objectivity and avoid allowing personal interests to undermine professional judgement."],
+      ["Depreciation (HL only)", "Depreciation is the decrease in the value of a fixed asset over time and is recorded as a non-cash expense in the profit and loss account. The book explains wear and tear and obsolescence as reasons assets lose value. The two methods covered are straight-line depreciation, which allocates an equal amount over the asset's useful life, and units of production, which bases the charge on actual usage or output."]
+    ],
+    formulas: [
+      ["Cost of sales", "Opening stock + purchases − closing stock", "Calculates the direct cost of the goods sold during the accounting period."],
+      ["Gross profit", "Sales revenue − cost of sales", "Shows the profit from trading before indirect expenses are deducted."],
+      ["Profit before interest and tax (PBIT)", "Gross profit − expenses", "Deducts indirect expenses/overheads from gross profit."],
+      ["Profit before tax", "PBIT − interest", "Deducts interest payable on loans from profit before interest and tax."],
+      ["Profit for the period", "Profit before tax − corporation tax", "Shows profit after tax for the accounting period."],
+      ["Retained profit", "Profit for the period − dividends", "The portion of the period's profit kept in the business."],
+      ["Total assets", "Non-current assets + current assets", "Adds long-term and short-term assets."],
+      ["Total liabilities", "Current liabilities + non-current liabilities", "Adds short-term and long-term debts."],
+      ["Net assets", "Total assets − total liabilities", "The residual amount financed by equity."],
+      ["Balance sheet equation", "Total assets = total liabilities + equity", "The accounting relationship that makes the statement of financial position balance."],
+      ["Straight-line depreciation (HL)", "(Cost − residual value) ÷ useful life", "Allocates an equal depreciation charge to each year of the asset's useful life."],
+      ["Units of production rate (HL)", "(Cost basis − salvage value) ÷ total estimated units", "Calculates depreciation per unit of activity or output."],
+      ["Units of production depreciation (HL)", "Units of production rate × actual units produced", "Calculates the depreciation expense based on the asset's actual usage during the period."]
+    ],
+    terms: [
+      ["Final accounts", "Financial statements compiled at the end of an accounting period."],
+      ["Profit and loss account", "Also called the income statement; records income and expenditure flows over a period."],
+      ["Cost of sales / COGS", "The direct cost of producing or purchasing goods that were sold."],
+      ["Gross profit", "Sales revenue less cost of sales."],
+      ["PBIT", "Profit before interest and tax; gross profit less indirect expenses."],
+      ["Dividends", "Payments made to shareholders, decided by the board of directors."],
+      ["Retained profit", "Earnings left in the business after dividends and other relevant deductions."],
+      ["Balance sheet", "A statement of assets, liabilities and equity at a specific point in time."],
+      ["Current assets", "Short-term assets such as cash, debtors and stock."],
+      ["Non-current assets", "Long-term assets expected to remain in the business for more than 12 months."],
+      ["Current liabilities", "Debts payable within 12 months."],
+      ["Non-current liabilities", "Long-term debts payable after 12 months."],
+      ["Equity", "The owners' residual interest in the business after liabilities are deducted from assets."],
+      ["Intangible assets", "Non-physical assets such as patents, goodwill, copyright and trademarks."],
+      ["Depreciation (HL)", "The decrease in the value of a fixed asset over time, recorded as a non-cash expense."],
+      ["Residual / salvage value", "The estimated value of an asset at the end of its useful life."]
+    ]
+  },
