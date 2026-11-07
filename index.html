@@ -1,756 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Finance — an interactive finance and accounting learning hub.">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Finance — an interactive finance and accounting learning hub." />
   <title>Finance | Finance Learning Hub</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
   <aside class="sidebar" id="sidebar">
-
-    <a class="brand" href="#home">
-      <span class="brand-mark">F</span>
-      <span>
-        Finance
-        <small>BUSINESS & ACCOUNTS</small>
-      </span>
-    </a>
-
+    <a class="brand" href="#home"><span class="brand-mark">F</span><span>Finance<small>BUSINESS &amp; ACCOUNTS</small></span></a>
     <p class="side-label">LEARN</p>
-
     <nav>
-      <a class="nav-link active" href="#home" data-section="home">
-        <span>⌂</span> Overview
-      </a>
-
-      <a class="nav-link" href="#syllabus" data-section="syllabus">
-        <span>▤</span> Finance library
-      </a>
-
-      <a class="nav-link" href="#calculators" data-section="calculators">
-        <span>▦</span> Financial calculators
-      </a>
-
-      <a class="nav-link" href="#graphs" data-section="graphs">
-        <span>⌁</span> Interactive graphs
-      </a>
-
-      <a class="nav-link" href="#practice" data-section="practice">
-        <span>✎</span> Exam practice
-      </a>
+      <a class="nav-link active" href="#home" data-section="home"><span>⌂</span> Overview</a>
+      <a class="nav-link" href="#syllabus" data-section="syllabus"><span>▤</span> Finance library</a>
+      <a class="nav-link" href="#calculators" data-section="calculators"><span>▦</span> Financial calculators</a>
+      <a class="nav-link" href="#graphs" data-section="graphs"><span>⌁</span> Interactive graphs</a>
+      <a class="nav-link" href="#practice" data-section="practice"><span>✎</span> Exam practice</a>
     </nav>
-
     <div class="sidebar-bottom">
-
-      <div class="mini-card">
-        <span class="eyebrow">YOUR LEARNING SPACE</span>
-        <p>Understand the numbers behind business decisions.</p>
-        <a href="#syllabus" data-go="syllabus">Start learning →</a>
-      </div>
-
-      <span class="copyright">
-        © 2026 Finance · Independent learning project
-      </span>
-
+      <div class="mini-card"><span class="eyebrow">YOUR LEARNING SPACE</span><p>Understand the numbers behind business decisions.</p><a href="#syllabus" data-go="syllabus">Start learning →</a></div>
+      <span class="copyright">© 2026 Finance · Independent learning project</span>
     </div>
-
   </aside>
 
-
   <main class="main">
-
     <header class="topbar">
-
-      <button class="menu-button" id="menuButton">
-        ☰
-      </button>
-
-      <div class="breadcrumb">
-        FINANCE & ACCOUNTS
-        <span>/</span>
-        <strong id="currentPage">OVERVIEW</strong>
-      </div>
-
-      <div class="top-actions">
-        <span class="status-dot"></span>
-        IBDP BUSINESS MANAGEMENT · HL
-      </div>
-
+      <button class="menu-button" id="menuButton" aria-label="Open navigation">☰</button>
+      <div class="breadcrumb">FINANCE &amp; ACCOUNTS <span>/</span> <strong id="currentPage">OVERVIEW</strong></div>
+      <div class="top-actions"><span class="status-dot"></span> IBDP BUSINESS MANAGEMENT · HL</div>
     </header>
 
-
-    <!-- HOME PAGE -->
-
     <section id="home" class="page-section">
-
       <div class="hero">
-
         <div class="hero-copy">
-
-          <span class="eyebrow light">
-            THE FINANCE & BUSINESS LEARNING HUB
-          </span>
-
-          <h1>
-            Make sense of
-            <br>
-            <em>the numbers.</em>
-          </h1>
-
-          <p>
-            Explore the financial decisions that shape businesses.
-            Learn the concepts, practise the calculations and see
-            how changing the numbers changes the outcome.
-          </p>
-
-          <div class="hero-actions">
-
-            <a class="button button-coral"
-               href="#syllabus"
-               data-go="syllabus">
-              Explore the library →
-            </a>
-
-            <a class="text-link light-link"
-               href="#calculators"
-               data-go="calculators">
-              Open calculators ↗
-            </a>
-
-          </div>
-
+          <span class="eyebrow light">THE FINANCE &amp; BUSINESS LEARNING HUB</span>
+          <h1>Make sense of<br><em>the numbers.</em></h1>
+          <p>Explore the financial decisions that shape businesses. Learn the concepts, practise the calculations and see how changing the numbers changes the outcome.</p>
+          <div class="hero-actions"><a class="button button-coral" href="#syllabus" data-go="syllabus">Explore the library <span>→</span></a><a class="text-link light-link" href="#calculators" data-go="calculators">Open calculators ↗</a></div>
         </div>
-
-
         <div class="hero-visual">
-
-          <div class="visual-top">
-            <span>FINANCIAL SNAPSHOT</span>
-            <span class="live-pill">● LIVE MODEL</span>
-          </div>
-
-          <div class="visual-number">$248,500</div>
-
-          <div class="visual-caption">
-            Illustrative annual revenue
-          </div>
-
-          <div class="sparkline">
-            <span style="height:34%"></span>
-            <span style="height:46%"></span>
-            <span style="height:40%"></span>
-            <span style="height:59%"></span>
-            <span style="height:51%"></span>
-            <span style="height:70%"></span>
-            <span style="height:63%"></span>
-            <span style="height:88%"></span>
-            <span style="height:78%"></span>
-            <span style="height:100%"></span>
-          </div>
-
-          <div class="visual-footer">
-            <span>REVENUE TREND</span>
-            <strong>+18.6% <small>illustrative</small></strong>
-          </div>
-
+          <div class="visual-top"><span>FINANCIAL SNAPSHOT</span><span class="live-pill">● LIVE MODEL</span></div>
+          <div class="visual-number">$248,500</div><div class="visual-caption">Illustrative annual revenue</div>
+          <div class="sparkline"><span style="height:34%"></span><span style="height:46%"></span><span style="height:40%"></span><span style="height:59%"></span><span style="height:51%"></span><span style="height:70%"></span><span style="height:63%"></span><span style="height:88%"></span><span style="height:78%"></span><span style="height:100%"></span></div>
+          <div class="visual-footer"><span>REVENUE TREND</span><strong>+18.6% <small>illustrative</small></strong></div>
         </div>
-
         <div class="hero-decoration">F</div>
-
       </div>
 
-
-      <div class="welcome-row">
-
-        <div>
-          <span class="eyebrow">YOUR FINANCE TOOLKIT</span>
-
-          <h2>Learn it. Calculate it. Apply it.</h2>
-
-          <p class="muted">
-            A practical guide to the IBDP Business Management
-            Finance and Accounts unit.
-          </p>
-        </div>
-
-        <span class="tag">
-          BUSINESS MANAGEMENT · UNIT 3
-        </span>
-
-      </div>
-
-
+      <div class="welcome-row"><div><span class="eyebrow">YOUR FINANCE TOOLKIT</span><h2>Learn it. Calculate it. Apply it.</h2><p class="muted">A practical guide to the IBDP Business Management Finance and Accounts unit.</p></div><span class="tag">BUSINESS MANAGEMENT · UNIT 3</span></div>
       <div class="feature-grid">
-
-        <a class="feature-card" href="#syllabus" data-go="syllabus">
-          <div class="feature-icon coral-icon">▤</div>
-          <span class="eyebrow">01 / KNOWLEDGE</span>
-          <h3>Finance library</h3>
-          <p>Detailed notes, key terminology, formula explanations and business applications.</p>
-          <span class="card-arrow">Explore topics ↗</span>
-        </a>
-
-        <a class="feature-card" href="#calculators" data-go="calculators">
-          <div class="feature-icon peach-icon">▦</div>
-          <span class="eyebrow">02 / APPLICATION</span>
-          <h3>Financial calculators</h3>
-          <p>Build a profit and loss statement, balance sheet and cash flow forecast.</p>
-          <span class="card-arrow">Open tools ↗</span>
-        </a>
-
-        <a class="feature-card" href="#graphs" data-go="graphs">
-          <div class="feature-icon sage-icon">⌁</div>
-          <span class="eyebrow">03 / VISUALISATION</span>
-          <h3>Interactive graphs</h3>
-          <p>Adjust revenue, costs and other variables to understand financial relationships.</p>
-          <span class="card-arrow">Explore graphs ↗</span>
-        </a>
-
-        <a class="feature-card" href="#practice" data-go="practice">
-          <div class="feature-icon lilac-icon">✎</div>
-          <span class="eyebrow">04 / PREPARATION</span>
-          <h3>Exam practice</h3>
-          <p>Try exam-style questions and compare your work with structured model answers.</p>
-          <span class="card-arrow">Practise now ↗</span>
-        </a>
-
+        <a class="feature-card" href="#syllabus" data-go="syllabus"><div class="feature-icon coral-icon">▤</div><span class="eyebrow">01 / KNOWLEDGE</span><h3>Finance library</h3><p>Detailed notes, key terminology, formula explanations and business applications.</p><span class="card-arrow">Explore topics ↗</span></a>
+        <a class="feature-card" href="#calculators" data-go="calculators"><div class="feature-icon peach-icon">▦</div><span class="eyebrow">02 / APPLICATION</span><h3>Financial statements</h3><p>Prepare formal profit or loss, financial position and cash flow statements.</p><span class="card-arrow">Open tools ↗</span></a>
+        <a class="feature-card" href="#graphs" data-go="graphs"><div class="feature-icon sage-icon">⌁</div><span class="eyebrow">03 / VISUALISATION</span><h3>Interactive graphs</h3><p>Adjust revenue, costs and other variables to understand financial relationships.</p><span class="card-arrow">Explore graphs ↗</span></a>
+        <a class="feature-card" href="#practice" data-go="practice"><div class="feature-icon lilac-icon">✎</div><span class="eyebrow">04 / PREPARATION</span><h3>Exam practice</h3><p>Try exam-style questions and compare your work with structured model answers.</p><span class="card-arrow">Practise now ↗</span></a>
       </div>
-
-
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">START HERE</span>
-          <h2>Explore Unit 3</h2>
-        </div>
-
-        <a href="#syllabus" data-go="syllabus" class="text-link">
-          View all topics →
-        </a>
-      </div>
-
+      <div class="section-heading"><div><span class="eyebrow">START HERE</span><h2>Explore Unit 3</h2></div><a href="#syllabus" data-go="syllabus" class="text-link">View all topics →</a></div>
       <div class="topic-preview" id="topicPreview"></div>
-
-
-      <div class="note-banner">
-
-        <div class="note-symbol">✦</div>
-
-        <div>
-          <strong>Finance concept of the day</strong>
-
-          <p>
-            A business can be profitable but still struggle to pay
-            short-term debts. Profitability and liquidity measure
-            different aspects of financial health.
-          </p>
-        </div>
-
-      </div>
-
+      <div class="note-banner"><div class="note-symbol">✦</div><div><strong>Finance concept of the day</strong><p>A business can be profitable but still struggle to pay short-term debts. Profitability and liquidity measure different aspects of financial health.</p></div></div>
     </section>
-
-
-    <!-- FINANCE LIBRARY -->
 
     <section id="syllabus" class="page-section hidden">
-
-      <div class="page-intro">
-
-        <span class="eyebrow">01 / KNOWLEDGE LIBRARY</span>
-
-        <h1>Finance & <em>accounts.</em></h1>
-
-        <p>
-          Explore the Unit 3 syllabus areas. Each topic includes
-          definitions, explanations, formulas where relevant and
-          business context. Check your teacher's guide for the
-          exact depth required for your exam session.
-        </p>
-
-      </div>
-
-      <div class="library-layout">
-
-        <div class="topic-list" id="topicList"></div>
-
-        <article class="topic-content" id="topicContent">
-
-          <div class="empty-state">
-            <span>▤</span>
-            <h2>Select a topic</h2>
-            <p>Choose a syllabus area to explore its concepts and calculations.</p>
-          </div>
-
-        </article>
-
-      </div>
-
+      <div class="page-intro"><span class="eyebrow">01 / KNOWLEDGE LIBRARY</span><h1>Finance &amp; <em>accounts.</em></h1><p>Explore the Unit 3 syllabus areas. Each topic includes definitions, explanations, formulas where relevant and business context. Check your teacher's guide for the exact depth required for your exam session.</p></div>
+      <div class="library-layout"><div class="topic-list" id="topicList"></div><article class="topic-content" id="topicContent"><div class="empty-state"><span>▤</span><h2>Select a topic</h2><p>Choose a syllabus area to explore its concepts and calculations.</p></div></article></div>
     </section>
-
-
-    <!-- CALCULATORS -->
 
     <section id="calculators" class="page-section hidden">
-
       <div class="page-intro">
         <span class="eyebrow">02 / FINANCIAL APPLICATION</span>
-        <h1>Numbers into <em>decisions.</em></h1>
-        <p>
-          Enter your own figures and generate simplified financial
-          statements. All values use the same currency unit.
-        </p>
+        <h1>Financial statements.</h1>
+        <p>Enter figures and watch the statements update immediately. Each preview follows a formal financial-document layout and can be printed or saved as a PDF.</p>
       </div>
 
-
-      <div class="tab-row" role="tablist">
-
-        <button class="tab active" data-calctab="pl">
-          Profit & loss
-        </button>
-
-        <button class="tab" data-calctab="bs">
-          Balance sheet
-        </button>
-
-        <button class="tab" data-calctab="cf">
-          Cash flow
-        </button>
-
+      <div class="statement-settings">
+        <label>Business name
+          <input type="text" id="businessName" value="Northstar Trading Ltd." maxlength="70">
+        </label>
+        <label>Presentation currency
+          <select id="currencySelect">
+            <option value="USD" selected>USD — US Dollar ($)</option>
+            <option value="MXN">MXN — Mexican Peso ($)</option>
+            <option value="GBP">GBP — Pound Sterling (£)</option>
+            <option value="EUR">EUR — Euro (€)</option>
+          </select>
+        </label>
       </div>
 
+      <div class="tab-row" role="tablist" aria-label="Financial statement type">
+        <button class="tab active" type="button" data-calctab="pl" aria-selected="true">Profit or loss</button>
+        <button class="tab" type="button" data-calctab="bs" aria-selected="false">Financial position</button>
+        <button class="tab" type="button" data-calctab="cf" aria-selected="false">Cash flow</button>
+      </div>
 
-      <!-- PROFIT AND LOSS -->
-
-      <div class="calculator-panel" id="plPanel">
-
-        <div class="panel-heading">
-          <div>
-            <span class="eyebrow">INCOME STATEMENT</span>
-            <h2>Profit & loss calculator</h2>
-            <p>Measures financial performance over a period of time.</p>
+      <!-- PROFIT OR LOSS -->
+      <section class="calculator-panel" id="plPanel" data-calc-panel="pl">
+        <div class="calc-heading">
+          <div><span class="eyebrow">01 / PERFORMANCE</span><h2>Statement of profit or loss</h2><p>For a period of time · amounts recalculate as you type</p></div>
+          <span class="live-indicator"><span></span> LIVE PREVIEW</span>
+        </div>
+        <div class="calc-layout">
+          <div class="input-card">
+            <div class="input-card-heading"><h3>Enter figures</h3><p>Use positive numbers. Expenses are deducted automatically.</p></div>
+            <label class="field">Financial year ended
+              <input class="calc-input" type="date" id="plDate" value="2025-12-31">
+            </label>
+            <div class="input-section-title">Income and direct costs</div>
+            <label class="field">Revenue <input class="calc-input" type="number" id="plRevenue" value="120000" min="0" step="0.01"></label>
+            <label class="field">Cost of sales <input class="calc-input" type="number" id="plCogs" value="48000" min="0" step="0.01"></label>
+            <div class="input-section-title">Operating expenses</div>
+            <label class="field">Distribution expenses <input class="calc-input" type="number" id="plDistribution" value="12000" min="0" step="0.01"></label>
+            <label class="field">Administrative expenses <input class="calc-input" type="number" id="plAdmin" value="15000" min="0" step="0.01"></label>
+            <label class="field">Depreciation expense <input class="calc-input" type="number" id="plDepreciation" value="5000" min="0" step="0.01"></label>
+            <div class="input-section-title">Finance and tax</div>
+            <label class="field">Finance costs <input class="calc-input" type="number" id="plInterest" value="3000" min="0" step="0.01"></label>
+            <label class="field">Income tax expense <input class="calc-input" type="number" id="plTax" value="7000" min="0" step="0.01"></label>
+            <div class="input-actions no-print">
+              <button class="button button-primary" type="button" id="calculatePL">Update statement</button>
+              <button class="button button-secondary" type="button" data-reset="pl">Reset example</button>
+            </div>
           </div>
-
-          <span class="tag">PERIOD-BASED</span>
+          <article class="statement-paper" id="plResult" aria-live="polite" aria-label="Statement of profit or loss preview"></article>
         </div>
+      </section>
 
-        <div class="input-grid">
-
-          <label>
-            Sales revenue
-            <input type="number" id="plRevenue" value="120000" min="0">
-          </label>
-
-          <label>
-            Cost of sales
-            <input type="number" id="plCogs" value="48000" min="0">
-          </label>
-
-          <label>
-            Operating expenses
-            <input type="number" id="plExpenses" value="32000" min="0">
-          </label>
-
-          <label>
-            Finance costs / interest
-            <input type="number" id="plInterest" value="3000" min="0">
-          </label>
-
-          <label>
-            Tax expense
-            <input type="number" id="plTax" value="7000" min="0">
-          </label>
-
+      <!-- STATEMENT OF FINANCIAL POSITION -->
+      <section class="calculator-panel hidden" id="bsPanel" data-calc-panel="bs">
+        <div class="calc-heading">
+          <div><span class="eyebrow">02 / FINANCIAL POSITION</span><h2>Statement of financial position</h2><p>At a specific date · the accounting equation is checked automatically</p></div>
+          <span class="live-indicator"><span></span> LIVE PREVIEW</span>
         </div>
-
-        <button class="button button-dark" id="calculatePL">
-          Calculate statement
-        </button>
-
-        <div class="statement" id="plResult"></div>
-
-      </div>
-
-
-      <!-- BALANCE SHEET -->
-
-      <div class="calculator-panel hidden" id="bsPanel">
-
-        <div class="panel-heading">
-          <div>
-            <span class="eyebrow">STATEMENT OF FINANCIAL POSITION</span>
-            <h2>Balance sheet calculator</h2>
-            <p>Shows what a business owns and owes at a particular point in time.</p>
+        <div class="calc-layout">
+          <div class="input-card">
+            <div class="input-card-heading"><h3>Enter figures</h3><p>Enter asset, equity and liability balances.</p></div>
+            <label class="field">Statement date
+              <input class="calc-input" type="date" id="bsDate" value="2025-12-31">
+            </label>
+            <div class="input-section-title">Non-current assets</div>
+            <label class="field">Property, plant and equipment — cost <input class="calc-input" type="number" id="bsPpeCost" value="125000" min="0" step="0.01"></label>
+            <label class="field">Accumulated depreciation <input class="calc-input" type="number" id="bsAccumDep" value="35000" min="0" step="0.01"></label>
+            <div class="input-section-title">Current assets</div>
+            <label class="field">Inventory <input class="calc-input" type="number" id="bsInventory" value="18000" min="0" step="0.01"></label>
+            <label class="field">Trade receivables <input class="calc-input" type="number" id="bsReceivables" value="12000" min="0" step="0.01"></label>
+            <label class="field">Cash and cash equivalents <input class="calc-input" type="number" id="bsCash" value="10000" min="0" step="0.01"></label>
+            <div class="input-section-title">Equity</div>
+            <label class="field">Share capital <input class="calc-input" type="number" id="bsCapital" value="50000" min="0" step="0.01"></label>
+            <label class="field">Retained earnings <input class="calc-input" type="number" id="bsRetained" value="29000" min="0" step="0.01"></label>
+            <div class="input-section-title">Liabilities</div>
+            <label class="field">Trade payables <input class="calc-input" type="number" id="bsPayables" value="10000" min="0" step="0.01"></label>
+            <label class="field">Short-term borrowings <input class="calc-input" type="number" id="bsShortLoan" value="6000" min="0" step="0.01"></label>
+            <label class="field">Long-term borrowings <input class="calc-input" type="number" id="bsLongLoan" value="35000" min="0" step="0.01"></label>
+            <div class="input-actions no-print">
+              <button class="button button-primary" type="button" id="calculateBS">Update statement</button>
+              <button class="button button-secondary" type="button" data-reset="bs">Reset example</button>
+            </div>
           </div>
-
-          <span class="tag">POINT-IN-TIME</span>
+          <article class="statement-paper" id="bsResult" aria-live="polite" aria-label="Statement of financial position preview"></article>
         </div>
+      </section>
 
-        <div class="input-grid">
-
-          <label>
-            Non-current assets
-            <input type="number" id="bsNca" value="90000" min="0">
-          </label>
-
-          <label>
-            Inventory
-            <input type="number" id="bsInventory" value="18000" min="0">
-          </label>
-
-          <label>
-            Trade receivables
-            <input type="number" id="bsReceivables" value="12000" min="0">
-          </label>
-
-          <label>
-            Cash and cash equivalents
-            <input type="number" id="bsCash" value="10000" min="0">
-          </label>
-
-          <label>
-            Current liabilities
-            <input type="number" id="bsCl" value="16000" min="0">
-          </label>
-
-          <label>
-            Non-current liabilities
-            <input type="number" id="bsNcl" value="35000" min="0">
-          </label>
-
-          <label>
-            Share capital
-            <input type="number" id="bsCapital" value="50000" min="0">
-          </label>
-
-          <label>
-            Retained earnings
-            <input type="number" id="bsRetained" value="29000" min="0">
-          </label>
-
+      <!-- CASH FLOW STATEMENT -->
+      <section class="calculator-panel hidden" id="cfPanel" data-calc-panel="cf">
+        <div class="calc-heading">
+          <div><span class="eyebrow">03 / CASH MOVEMENTS</span><h2>Cash flow statement</h2><p>Direct-method learning model · cash received and paid during a period</p></div>
+          <span class="live-indicator"><span></span> LIVE PREVIEW</span>
         </div>
-
-        <button class="button button-dark" id="calculateBS">
-          Calculate statement
-        </button>
-
-        <div class="statement" id="bsResult"></div>
-
-      </div>
-
-
-      <!-- CASH FLOW -->
-
-      <div class="calculator-panel hidden" id="cfPanel">
-
-        <div class="panel-heading">
-          <div>
-            <span class="eyebrow">CASH FLOW FORECAST</span>
-            <h2>Cash flow calculator</h2>
-            <p>Tracks expected cash movements and the closing cash balance.</p>
+        <div class="calc-layout">
+          <div class="input-card">
+            <div class="input-card-heading"><h3>Enter figures</h3><p>Enter positive amounts for receipts and payments. The statement assigns the cash-flow signs.</p></div>
+            <label class="field">Period ended
+              <input class="calc-input" type="date" id="cfDate" value="2025-12-31">
+            </label>
+            <div class="input-section-title">Operating activities</div>
+            <label class="field">Cash received from customers <input class="calc-input" type="number" id="cfReceipts" value="45000" min="0" step="0.01"></label>
+            <label class="field">Other operating receipts <input class="calc-input" type="number" id="cfOtherIn" value="2000" min="0" step="0.01"></label>
+            <label class="field">Cash paid to suppliers <input class="calc-input" type="number" id="cfSuppliers" value="18000" min="0" step="0.01"></label>
+            <label class="field">Cash paid to employees <input class="calc-input" type="number" id="cfWages" value="12000" min="0" step="0.01"></label>
+            <label class="field">Other operating payments <input class="calc-input" type="number" id="cfOtherOut" value="5000" min="0" step="0.01"></label>
+            <div class="input-section-title">Investing activities</div>
+            <label class="field">Purchase of non-current assets <input class="calc-input" type="number" id="cfAssetPurchase" value="4000" min="0" step="0.01"></label>
+            <label class="field">Proceeds from asset disposals <input class="calc-input" type="number" id="cfAssetSale" value="0" min="0" step="0.01"></label>
+            <div class="input-section-title">Financing activities</div>
+            <label class="field">Proceeds from new borrowings <input class="calc-input" type="number" id="cfNewLoan" value="3000" min="0" step="0.01"></label>
+            <label class="field">Loan repayments <input class="calc-input" type="number" id="cfLoanRepayment" value="2000" min="0" step="0.01"></label>
+            <label class="field">Dividends paid <input class="calc-input" type="number" id="cfDividends" value="1000" min="0" step="0.01"></label>
+            <label class="field">Opening cash and cash equivalents <input class="calc-input" type="number" id="cfOpening" value="12000" min="0" step="0.01"></label>
+            <div class="input-actions no-print">
+              <button class="button button-primary" type="button" id="calculateCF">Update statement</button>
+              <button class="button button-secondary" type="button" data-reset="cf">Reset example</button>
+            </div>
           </div>
-
-          <span class="tag">PERIOD-BASED</span>
+          <article class="statement-paper" id="cfResult" aria-live="polite" aria-label="Cash flow statement preview"></article>
         </div>
+      </section>
 
-        <div class="input-grid">
-
-          <label>
-            Opening cash balance
-            <input type="number" id="cfOpening" value="12000">
-          </label>
-
-          <label>
-            Cash received from customers
-            <input type="number" id="cfReceipts" value="45000">
-          </label>
-
-          <label>
-            Other cash inflows
-            <input type="number" id="cfOtherIn" value="2000">
-          </label>
-
-          <label>
-            Payments to suppliers
-            <input type="number" id="cfSuppliers" value="18000">
-          </label>
-
-          <label>
-            Wages and operating payments
-            <input type="number" id="cfWages" value="12000">
-          </label>
-
-          <label>
-            Other cash outflows
-            <input type="number" id="cfOtherOut" value="5000">
-          </label>
-
-        </div>
-
-        <button class="button button-dark" id="calculateCF">
-          Calculate cash flow
-        </button>
-
-        <div class="statement" id="cfResult"></div>
-
-      </div>
-
-      <p class="disclaimer">
-        Educational model only. These simplified calculators are designed
-        for learning and do not replace full accounting statements or
-        professional financial advice. A balance sheet balances only
-        when the inputs satisfy the accounting equation.
-      </p>
-
+      <p class="disclaimer">These are simplified educational statement templates, not audited accounts. Real reporting formats and classifications can vary by accounting framework and business. The balance sheet preview checks Assets = Equity + Liabilities; it does not automatically force an unbalanced set of figures to balance.</p>
     </section>
-
-
-    <!-- INTERACTIVE GRAPHS -->
 
     <section id="graphs" class="page-section hidden">
-
-      <div class="page-intro">
-        <span class="eyebrow">03 / VISUAL LEARNING LAB</span>
-        <h1>See how numbers <em>move.</em></h1>
-        <p>
-          Adjust the sliders to explore how changes in financial
-          variables affect business outcomes.
-        </p>
-      </div>
-
-
+      <div class="page-intro"><span class="eyebrow">03 / VISUAL LEARNING LAB</span><h1>See how numbers <em>move.</em></h1><p>Adjust the sliders to explore how changes in financial variables affect business outcomes.</p></div>
       <div class="graph-grid">
-
-        <div class="graph-card wide">
-
-          <div class="graph-title">
-            <div>
-              <span class="eyebrow">MODEL 01</span>
-              <h2>Revenue, costs & profit</h2>
-              <p>Explore how sales volume changes revenue, total costs and profit.</p>
-            </div>
-
-            <span class="tag">LIVE MODEL</span>
-          </div>
-
-          <div class="slider-control">
-            <label for="unitsSlider">
-              Units sold
-              <strong id="unitsValue">1,000</strong>
-            </label>
-            <input type="range" id="unitsSlider" min="0" max="3000" step="50" value="1000">
-          </div>
-
-          <div class="slider-control">
-            <label for="priceSlider">
-              Selling price per unit
-              <strong id="priceValue">$50</strong>
-            </label>
-            <input type="range" id="priceSlider" min="10" max="100" value="50">
-          </div>
-
-          <div class="slider-control">
-            <label for="variableSlider">
-              Variable cost per unit
-              <strong id="variableValue">$25</strong>
-            </label>
-            <input type="range" id="variableSlider" min="5" max="60" value="25">
-          </div>
-
-          <div class="slider-control">
-            <label for="fixedSlider">
-              Total fixed costs
-              <strong id="fixedValue">$15,000</strong>
-            </label>
-            <input type="range" id="fixedSlider" min="0" max="50000" step="500" value="15000">
-          </div>
-
-          <div class="metric-row">
-
-            <div>
-              <small>REVENUE</small>
-              <strong id="metricRevenue">$50,000</strong>
-            </div>
-
-            <div>
-              <small>TOTAL COST</small>
-              <strong id="metricCost">$40,000</strong>
-            </div>
-
-            <div>
-              <small>PROFIT / LOSS</small>
-              <strong id="metricProfit">$10,000</strong>
-            </div>
-
-          </div>
-
-          <canvas id="profitChart" height="115"></canvas>
-
-          <p class="graph-explain" id="profitExplanation">
-            At the current values, revenue exceeds total costs.
-          </p>
-
+        <div class="graph-card wide"><div class="graph-title"><div><span class="eyebrow">MODEL 01</span><h2>Revenue, costs &amp; profit</h2><p>Explore how sales volume changes revenue, total costs and profit.</p></div><span class="tag">LIVE MODEL</span></div>
+          <div class="slider-control"><label for="unitsSlider">Units sold <strong id="unitsValue">1,000</strong></label><input type="range" id="unitsSlider" min="0" max="3000" step="50" value="1000"></div>
+          <div class="slider-control"><label for="priceSlider">Selling price per unit <strong id="priceValue">$50</strong></label><input type="range" id="priceSlider" min="10" max="100" value="50"></div>
+          <div class="slider-control"><label for="variableSlider">Variable cost per unit <strong id="variableValue">$25</strong></label><input type="range" id="variableSlider" min="5" max="60" value="25"></div>
+          <div class="slider-control"><label for="fixedSlider">Total fixed costs <strong id="fixedValue">$15,000</strong></label><input type="range" id="fixedSlider" min="0" max="50000" step="500" value="15000"></div>
+          <div class="metric-row"><div><small>REVENUE</small><strong id="metricRevenue">$50,000</strong></div><div><small>TOTAL COST</small><strong id="metricCost">$40,000</strong></div><div><small>PROFIT / LOSS</small><strong id="metricProfit">$10,000</strong></div></div>
+          <canvas id="profitChart" height="115"></canvas><p class="graph-explain" id="profitExplanation">At the current values, revenue exceeds total costs.</p>
         </div>
-
-
-        <div class="graph-card">
-
-          <div class="graph-title">
-            <div>
-              <span class="eyebrow">MODEL 02</span>
-              <h2>Cash balance over time</h2>
-              <p>Change monthly net cash flow.</p>
-            </div>
-          </div>
-
-          <div class="slider-control">
-            <label for="cashChangeSlider">
-              Monthly net cash flow
-              <strong id="cashChangeValue">$2,000</strong>
-            </label>
-
-            <input type="range" id="cashChangeSlider" min="-5000" max="7000" step="250" value="2000">
-          </div>
-
-          <div class="slider-control">
-            <label for="cashStartSlider">
-              Opening balance
-              <strong id="cashStartValue">$10,000</strong>
-            </label>
-
-            <input type="range" id="cashStartSlider" min="0" max="30000" step="1000" value="10000">
-          </div>
-
-          <canvas id="cashChart" height="190"></canvas>
-
-          <p class="graph-explain" id="cashExplanation"></p>
-
+        <div class="graph-card"><div class="graph-title"><div><span class="eyebrow">MODEL 02</span><h2>Cash balance over time</h2><p>Change monthly net cash flow.</p></div></div>
+          <div class="slider-control"><label for="cashChangeSlider">Monthly net cash flow <strong id="cashChangeValue">$2,000</strong></label><input type="range" id="cashChangeSlider" min="-5000" max="7000" step="250" value="2000"></div>
+          <div class="slider-control"><label for="cashStartSlider">Opening balance <strong id="cashStartValue">$10,000</strong></label><input type="range" id="cashStartSlider" min="0" max="30000" step="1000" value="10000"></div>
+          <canvas id="cashChart" height="190"></canvas><p class="graph-explain" id="cashExplanation"></p>
         </div>
-
-
-        <div class="graph-card">
-
-          <div class="graph-title">
-            <div>
-              <span class="eyebrow">MODEL 03</span>
-              <h2>Current ratio</h2>
-              <p>Explore current assets against current liabilities.</p>
-            </div>
-          </div>
-
-          <div class="slider-control">
-            <label for="assetsSlider">
-              Current assets
-              <strong id="assetsValue">$30,000</strong>
-            </label>
-
-            <input type="range" id="assetsSlider" min="5000" max="100000" step="1000" value="30000">
-          </div>
-
-          <div class="slider-control">
-            <label for="liabilitiesSlider">
-              Current liabilities
-              <strong id="liabilitiesValue">$15,000</strong>
-            </label>
-
-            <input type="range" id="liabilitiesSlider" min="5000" max="100000" step="1000" value="15000">
-          </div>
-
-          <div class="ratio-display">
-            <strong id="currentRatioValue">2.00:1</strong>
-            <span>Current ratio</span>
-          </div>
-
-          <canvas id="ratioChart" height="150"></canvas>
-
-          <p class="graph-explain">
-            The current ratio indicates whether current assets can
-            cover short-term liabilities. A higher ratio is not
-            automatically better.
-          </p>
-
+        <div class="graph-card"><div class="graph-title"><div><span class="eyebrow">MODEL 03</span><h2>Current ratio</h2><p>Explore current assets against current liabilities.</p></div></div>
+          <div class="slider-control"><label for="assetsSlider">Current assets <strong id="assetsValue">$30,000</strong></label><input type="range" id="assetsSlider" min="5000" max="100000" step="1000" value="30000"></div>
+          <div class="slider-control"><label for="liabilitiesSlider">Current liabilities <strong id="liabilitiesValue">$15,000</strong></label><input type="range" id="liabilitiesSlider" min="5000" max="100000" step="1000" value="15000"></div>
+          <div class="ratio-display"><strong id="currentRatioValue">2.00:1</strong><span>Current ratio</span></div><canvas id="ratioChart" height="150"></canvas><p class="graph-explain">The current ratio indicates whether current assets can cover short-term liabilities. A higher ratio is not automatically better.</p>
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- EXAM PRACTICE -->
 
     <section id="practice" class="page-section hidden">
-
-      <div class="page-intro">
-        <span class="eyebrow">04 / EXAM APPLICATION</span>
-        <h1>Practise your <em>thinking.</em></h1>
-        <p>
-          Try these original practice questions. Reveal the model
-          answer after attempting each one.
-        </p>
-      </div>
-
-      <div class="practice-toolbar">
-
-        <div>
-          <span class="eyebrow">QUESTION BANK</span>
-          <h2 id="questionCount">All questions</h2>
-        </div>
-
-        <select id="questionFilter">
-          <option value="all">All topics</option>
-          <option value="3.2">Sources of finance</option>
-          <option value="3.3">Costs and revenues</option>
-          <option value="3.4">Final accounts</option>
-          <option value="3.5">Profitability and liquidity</option>
-          <option value="3.6">Efficiency ratios (HL)</option>
-          <option value="3.7">Cash flow</option>
-          <option value="3.8">Investment appraisal</option>
-          <option value="3.9">Budgets (HL)</option>
-        </select>
-
-      </div>
-
+      <div class="page-intro"><span class="eyebrow">04 / EXAM APPLICATION</span><h1>Practise your <em>thinking.</em></h1><p>Try these original practice questions. Reveal the model answer after attempting each one.</p></div>
+      <div class="practice-toolbar"><div><span class="eyebrow">QUESTION BANK</span><h2 id="questionCount">All questions</h2></div><select id="questionFilter"><option value="all">All topics</option><option value="3.2">Sources of finance</option><option value="3.3">Costs and revenues</option><option value="3.4">Final accounts</option><option value="3.5">Profitability and liquidity</option><option value="3.6">Debt/equity ratio analysis (HL)</option><option value="3.7">Cash flow</option><option value="3.8">Investment appraisal</option><option value="3.9">Budgets (HL)</option></select></div>
       <div id="questionList" class="question-list"></div>
-
     </section>
 
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-
-      <div class="brand footer-brand">
-        <span class="brand-mark">F</span>
-        <span>
-          Finance
-          <small>BUSINESS & ACCOUNTS</small>
-        </span>
-      </div>
-
-      <p>
-        An independent educational project exploring finance,
-        accounting and business decision-making.
-      </p>
-
-      <span>© 2026 Finance · Educational use</span>
-
-    </footer>
-
+    <footer class="footer"><div class="brand footer-brand"><span class="brand-mark">F</span><span>Finance<small>BUSINESS &amp; ACCOUNTS</small></span></div><p>An independent educational project exploring finance, accounting and business decision-making.</p><span>© 2026 Finance · Educational use</span></footer>
   </main>
-
   <script src="script.js"></script>
-
 </body>
 </html>
