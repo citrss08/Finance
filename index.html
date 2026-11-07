@@ -3,149 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Finance &amp; Accounts | IB Business Unit 3</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<title>IB Business HL | Unit 3 Finance and Accounts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <strong>Unit 3 Finance</strong>
-  <nav>
-    <a href="#sources">Sources</a><a href="#costs">Costs</a><a href="#breakeven">Break-even</a>
-    <a href="#accounts">Accounts</a><a href="#ratios">Ratios</a><a href="#cashflow">Cash flow</a>
-    <a href="#invest">Investment</a><a href="#quiz">Quiz</a>
-  </nav>
+<header class="hero">
+  <h1>Unit 3: Finance and Accounts</h1>
+  <p>IB Business Management HL. Pick a topic below. Every topic has terms, formulas, worked numbers, and pros and cons.</p>
+  <nav id="tabs" aria-label="Topics"></nav>
 </header>
-
 <main>
-<section class="hero">
-  <div>
-    <h1>Where does the money come from, and where does it go?</h1>
-    <p>IB Business Management, Unit 3: Finance and Accounts. Notes, formulas, worked examples and practice questions. Start by moving the sliders to see how a business breaks even.</p>
-  </div>
-  <div class="card chart-card">
-    <canvas id="beChart" width="640" height="380" aria-label="Break-even chart"></canvas>
-    <div class="sliders">
-      <label>Price per unit: $<output id="oP">20</output><input id="sP" type="range" min="5" max="50" value="20"></label>
-      <label>Variable cost per unit: $<output id="oV">8</output><input id="sV" type="range" min="1" max="40" value="8"></label>
-      <label>Fixed costs: $<output id="oF">60000</output><input id="sF" type="range" min="10000" max="150000" step="5000" value="60000"></label>
-    </div>
-    <p id="beText" class="result"></p>
-  </div>
+
+<section class="panel" data-title="Sources of finance" data-c="#FF5A5F">
+<h2>Sources of finance</h2>
+<p><b>Capital expenditure</b> buys non-current assets (machines, buildings). <b>Revenue expenditure</b> covers day-to-day costs (wages, rent). <b>Working capital</b> = current assets − current liabilities. It pays the daily bills.</p>
+<table><tr><th>Source</th><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td><b>Retained profit</b> (internal)</td><td>No interest, no loss of control</td><td>Slow, needs profit, less for dividends</td></tr>
+<tr><td><b>Sale of assets</b> (internal)</td><td>Quick cash, no debt</td><td>Lose the asset, may be needed</td></tr>
+<tr><td><b>Share capital</b> (external)</td><td>No repayment, large sums</td><td>Dilutes ownership, dividends, costly to issue</td></tr>
+<tr><td><b>Loan capital</b> (external)</td><td>Keeps ownership, fixed repayments</td><td>Interest, security needed, raises gearing</td></tr>
+<tr><td><b>Overdraft</b> (external)</td><td>Flexible, covers short gaps</td><td>High interest, bank can recall it</td></tr>
+<tr><td><b>Trade credit</b> (external)</td><td>Delays payment, no interest</td><td>Lose early-payment discounts, supplier trust</td></tr>
+<tr><td><b>Leasing</b> (external)</td><td>No large outlay, repairs included</td><td>Never owned, costs more in the long run</td></tr>
+<tr><td><b>Crowdfunding</b> (external)</td><td>Tests demand, no collateral</td><td>May fail, public pitch needed</td></tr></table>
+<p class="tip"><b>Evaluate tip:</b> match the finance to the need and the time frame. Overdrafts suit short gaps. Loans and shares suit long-term assets. A firm already highly geared should not borrow more.</p>
 </section>
 
-<section id="sources">
-  <h2>Sources of finance</h2>
-  <p>Businesses need finance to start up, run day to day (working capital) and grow (capital expenditure).</p>
-  <div class="two">
-    <div class="card"><h3>Internal</h3><ul><li><b>Retained profit:</b> profit reinvested. Cheap, but limited by profit.</li><li><b>Sale of assets:</b> raises cash quickly, but the asset is lost.</li><li><b>Personal funds:</b> owner's savings.</li></ul></div>
-    <div class="card"><h3>External</h3><ul><li><b>Share capital:</b> sell shares. No repayment, but ownership is diluted.</li><li><b>Loan capital:</b> borrow and repay with interest.</li><li><b>Overdraft:</b> short-term, flexible, high interest.</li><li><b>Trade credit, leasing, crowdfunding, venture capital.</b></li></ul></div>
-  </div>
-  <p class="tip">Short-term needs (stock, wages) suit short-term finance. Long-term needs (buildings, machinery) suit long-term finance.</p>
+<section class="panel" data-title="Costs and break-even" data-c="#F59E0B">
+<h2>Costs, revenue and break-even</h2>
+<div class="formulas">
+<div class="f">Total cost (TC) = FC + VC</div><div class="f">Revenue (TR) = P × Q</div>
+<div class="f">Profit = TR − TC</div><div class="f">Contribution per unit = P − VC</div>
+<div class="f">Break-even output = FC ÷ (P − VC)</div><div class="f">Margin of safety = actual − break-even</div>
+<div class="f">Target output = (FC + target profit) ÷ (P − VC)</div></div>
+<p><b>Fixed costs (FC)</b> stay the same as output changes (rent, insurance). <b>Variable costs (VC)</b> rise with output (materials). <b>Contribution</b> is what each unit adds towards covering fixed costs. Once fixed costs are covered, each extra unit adds profit.</p>
+<div class="card chart"><canvas id="beChart" width="640" height="340" aria-label="Break-even chart"></canvas>
+<div class="sliders"><label>Price: $<output id="oP">20</output><input id="sP" type="range" min="5" max="50" value="20"></label>
+<label>Variable cost per unit: $<output id="oV">8</output><input id="sV" type="range" min="1" max="40" value="8"></label>
+<label>Fixed costs: $<output id="oF">60000</output><input id="sF" type="range" min="10000" max="150000" step="5000" value="60000"></label></div>
+<p id="beText" class="result"></p></div>
+<details><summary>Worked example</summary><p>P = $20, VC = $8, FC = $60,000.<br>Contribution = 20 − 8 = <b>$12</b>. Each unit sold gives $12 towards the fixed costs.<br>Break-even = 60,000 ÷ 12 = <b>5,000 units</b>.<br>Selling 6,500 units: margin of safety = 6,500 − 5,000 = <b>1,500 units</b>, so sales can fall by 1,500 units before a loss.<br>Profit at 6,500 = 1,500 × 12 = <b>$18,000</b>.<br>For $24,000 profit: (60,000 + 24,000) ÷ 12 = <b>7,000 units</b>.</p></details>
+<div class="pc"><div class="pro"><h3>Advantages</h3><ul><li>Simple to draw and understand</li><li>Shows risk and the margin of safety</li><li>Useful for loan requests and pricing decisions</li></ul></div>
+<div class="con"><h3>Limitations</h3><ul><li>Assumes straight lines: no discounts, no bulk-buy savings</li><li>Assumes everything produced is sold</li><li>Costs and prices are assumed to stay fixed</li><li>Hard to use for firms with many products</li></ul></div></div>
 </section>
 
-<section id="costs">
-  <h2>Costs and revenue</h2>
-  <div class="formulas">
-    <div class="f">Total cost (TC) = FC + VC</div>
-    <div class="f">Total revenue (TR) = P × Q</div>
-    <div class="f">Profit = TR − TC</div>
-    <div class="f">Average cost = TC ÷ Q</div>
-  </div>
-  <div class="two">
-    <div class="card"><h3>Fixed costs</h3><p>Do not change with output in the short run: rent, salaries, insurance.</p></div>
-    <div class="card"><h3>Variable costs</h3><p>Change directly with output: raw materials, packaging, piece-rate pay.</p></div>
-  </div>
-  <p>Direct costs link to a specific product. Indirect (overhead) costs cannot easily be traced to one product.</p>
+<section class="panel" data-title="Final accounts" data-c="#10B981">
+<h2>Final accounts</h2>
+<p>Used by owners, managers, lenders, investors, employees, the tax authority and suppliers. Example business: <b>Sunrise Bakery</b> ($ thousands). The same figures are used in the next two topics.</p>
+<div class="two">
+<div class="card"><h3>Income statement (for the year)</h3><table>
+<tr><td>Revenue</td><td>800</td></tr><tr><td>− Cost of goods sold</td><td>480</td></tr><tr class="b"><td>Gross profit</td><td>320</td></tr>
+<tr><td>− Expenses</td><td>200</td></tr><tr class="b"><td>Operating profit</td><td>120</td></tr>
+<tr><td>− Interest</td><td>20</td></tr><tr class="b"><td>Profit before tax</td><td>100</td></tr>
+<tr><td>− Tax</td><td>20</td></tr><tr class="b"><td>Net profit</td><td>80</td></tr></table></div>
+<div class="card"><h3>Balance sheet (on one date)</h3><table>
+<tr><td>Non-current assets</td><td>500</td></tr><tr><td>Inventory</td><td>90</td></tr><tr><td>Receivables</td><td>70</td></tr><tr><td>Cash</td><td>40</td></tr>
+<tr class="b"><td>Current assets</td><td>200</td></tr><tr class="b"><td>Total assets</td><td>700</td></tr>
+<tr><td>Current liabilities (incl. payables 60)</td><td>100</td></tr><tr><td>Non-current liabilities</td><td>200</td></tr>
+<tr class="b"><td>Equity</td><td>400</td></tr></table></div></div>
+<div class="formulas"><div class="f">Assets = Liabilities + Equity (700 = 300 + 400)</div><div class="f">Capital employed = equity + non-current liabilities</div></div>
+<h3>Key terms</h3>
+<ul><li><b>Cost of goods sold (COGS):</b> direct cost of the goods sold, such as ingredients.</li><li><b>Gross profit:</b> revenue − COGS. It shows how well the product is priced and produced.</li><li><b>Operating profit:</b> gross profit − expenses. It shows profit from normal trading.</li><li><b>Net profit:</b> what is left after interest and tax. It can be paid out as dividends or retained.</li><li><b>Non-current assets:</b> used for more than a year. <b>Current assets:</b> turned into cash within a year (inventory, receivables, cash).</li><li><b>Current liabilities:</b> due within a year. <b>Non-current liabilities:</b> due after a year (long-term loans).</li><li><b>Equity:</b> the owners' stake: share capital plus retained profit.</li></ul>
+<p class="tip">The income statement shows <b>performance over time</b>. The balance sheet shows <b>position at one moment</b>. Accounts are a snapshot and can hide things, such as window dressing.</p>
 </section>
 
-<section id="breakeven">
-  <h2>Break-even analysis</h2>
-  <p>The break-even point is the output where total revenue equals total cost, so profit is zero. It is the crossing point in the chart above.</p>
-  <div class="formulas">
-    <div class="f">Contribution per unit = P − VC</div>
-    <div class="f">Break-even output = FC ÷ (P − VC)</div>
-    <div class="f">Margin of safety = actual output − break-even output</div>
-    <div class="f">Target output = (FC + target profit) ÷ (P − VC)</div>
-  </div>
-  <details><summary>Worked example</summary>
-    <p>P = $20, VC = $8, FC = $60,000. Contribution = 20 − 8 = $12. Break-even = 60,000 ÷ 12 = <b>5,000 units</b>. If the business sells 6,500 units, the margin of safety is 1,500 units. For a $24,000 profit: (60,000 + 24,000) ÷ 12 = 7,000 units.</p></details>
-  <p><b>Strengths:</b> simple, helps with planning and loans. <b>Limitations:</b> assumes straight lines, all output is sold, and costs and prices stay constant.</p>
+<section class="panel" data-title="Profitability and liquidity" data-c="#3B82F6">
+<h2>Profitability and liquidity ratios</h2>
+<p>Using Sunrise Bakery's accounts from the previous topic.</p>
+<table><tr><th>Ratio</th><th>Formula</th><th>Working</th><th>What it means</th></tr>
+<tr><td>Gross profit margin</td><td>GP ÷ revenue × 100</td><td>320 ÷ 800 = <b>40%</b></td><td>Of every $1 sold, 40 cents is left after direct costs</td></tr>
+<tr><td>Net profit margin</td><td>NP ÷ revenue × 100</td><td>80 ÷ 800 = <b>10%</b></td><td>10 cents of every $1 is final profit</td></tr>
+<tr><td>ROCE</td><td>Operating profit ÷ capital employed × 100</td><td>120 ÷ 600 = <b>20%</b></td><td>Each $1 of long-term capital earns 20 cents of operating profit</td></tr>
+<tr><td>Current ratio</td><td>Current assets ÷ current liabilities</td><td>200 ÷ 100 = <b>2.0</b></td><td>$2 of short-term assets for every $1 due soon</td></tr>
+<tr><td>Acid test</td><td>(CA − inventory) ÷ CL</td><td>(200 − 90) ÷ 100 = <b>1.1</b></td><td>Can pay short debts without selling stock</td></tr></table>
+<h3>ROCE in detail</h3>
+<p>Capital employed = equity 400 + non-current liabilities 200 = 600. ROCE shows how efficiently the firm uses all its long-term funds. <b>Compare it with the interest rate on borrowing</b>: if ROCE is 20% and loans cost 8%, borrowing to invest is worthwhile. If a bank deposit pays 3%, a 20% ROCE is strong.</p>
+<div class="pc"><div class="pro"><h3>ROCE advantages</h3><ul><li>Compares firms of different sizes</li><li>Compares with interest rates and past years</li><li>Shows if funds are used well</li></ul></div>
+<div class="con"><h3>ROCE limitations</h3><ul><li>Depends on how assets are valued and depreciated</li><li>A snapshot: capital employed can be inflated or deflated</li><li>Ignores risk, non-financial factors and the industry</li></ul></div></div>
+<p><b>Improve profitability:</b> raise prices, cut COGS (cheaper suppliers), cut expenses, increase sales volume. <b>Improve liquidity:</b> chase receivables, reduce inventory, delay payables, use finance with a longer term.</p>
+<p class="tip"><b>Liquidity guide:</b> a current ratio of 1.5 to 2 and an acid test near 1 is often healthy. Too high means money is sitting idle. Too low risks failing to pay debts. It depends on the industry (a supermarket needs less than a manufacturer).</p>
+<p><b>Limits of ratio analysis:</b> uses past data, depends on accounting policies, ignores qualitative factors, and only helps when compared with past results, competitors or targets.</p>
 </section>
 
-<section id="accounts">
-  <h2>Final accounts</h2>
-  <p>Final accounts show a firm's financial performance and position. The accounting equation always balances:</p>
-  <div class="formulas"><div class="f">Assets = Liabilities + Equity</div></div>
-  <div class="two">
-    <div class="card"><h3>Income statement (over a period)</h3>
-      <table><tr><td>Revenue</td><td>500,000</td></tr><tr><td>− Cost of goods sold</td><td>300,000</td></tr><tr class="b"><td>Gross profit</td><td>200,000</td></tr><tr><td>− Expenses</td><td>140,000</td></tr><tr class="b"><td>Operating profit</td><td>60,000</td></tr><tr><td>− Interest and tax</td><td>10,000</td></tr><tr class="b"><td>Net profit</td><td>50,000</td></tr></table></div>
-    <div class="card"><h3>Balance sheet (on one date)</h3>
-      <table><tr class="b"><td>Non-current assets</td><td>340,000</td></tr><tr><td>Inventory</td><td>40,000</td></tr><tr><td>Receivables and cash</td><td>80,000</td></tr><tr class="b"><td>Total assets</td><td>460,000</td></tr><tr><td>Current liabilities</td><td>60,000</td></tr><tr><td>Non-current liabilities</td><td>100,000</td></tr><tr class="b"><td>Equity</td><td>300,000</td></tr></table></div>
-  </div>
-  <p class="tip">Depreciation spreads the cost of a non-current asset over its useful life. Straight line: (cost − residual value) ÷ useful life.</p>
+<section class="panel" data-title="Gearing and efficiency (HL)" data-c="#8B5CF6">
+<h2>Gearing, debt/equity and efficiency ratios (HL)</h2>
+<table><tr><th>Ratio</th><th>Formula</th><th>Working</th></tr>
+<tr><td>Gearing</td><td>Non-current liabilities ÷ capital employed × 100</td><td>200 ÷ 600 = <b>33.3%</b></td></tr>
+<tr><td>Debt/equity</td><td>Non-current liabilities ÷ equity × 100</td><td>200 ÷ 400 = <b>50%</b></td></tr>
+<tr><td>Inventory turnover</td><td>COGS ÷ average inventory</td><td>480 ÷ 90 = <b>5.3 times</b></td></tr>
+<tr><td>Days sales in inventory</td><td>Inventory ÷ COGS × 365</td><td>90 ÷ 480 × 365 = <b>68 days</b></td></tr>
+<tr><td>Debtor days</td><td>Receivables ÷ revenue × 365</td><td>70 ÷ 800 × 365 = <b>32 days</b></td></tr>
+<tr><td>Creditor days</td><td>Payables ÷ COGS × 365</td><td>60 ÷ 480 × 365 = <b>46 days</b></td></tr></table>
+<p>Check your formula booklet for the exact version your exam uses.</p>
+<p><b>Gearing</b> shows how much of long-term funding is borrowed. Over 50% is often called highly geared. <b>Higher gearing</b> means more risk (fixed interest, even when profit falls), but lower cost and no loss of control. <b>Lower gearing</b> is safer but may mean slower growth.</p>
+<p><b>Efficiency:</b> Sunrise holds stock for 68 days (long for a bakery, so waste is likely), collects from customers in 32 days and pays suppliers in 46 days. Customers pay faster than the bakery pays, which helps cash flow. <b>Improve it:</b> shorter inventory days (just-in-time), shorter debtor days (early-payment discounts), longer creditor days (negotiate terms, without harming supplier relationships).</p>
 </section>
 
-<section id="ratios">
-  <h2>Ratio analysis</h2>
-  <div class="formulas">
-    <div class="f">Gross profit margin = gross profit ÷ revenue × 100</div>
-    <div class="f">Net profit margin = net profit ÷ revenue × 100</div>
-    <div class="f">ROCE = operating profit ÷ capital employed × 100</div>
-    <div class="f">Current ratio = current assets ÷ current liabilities</div>
-    <div class="f">Acid test = (current assets − inventory) ÷ current liabilities</div>
-  </div>
-  <details><summary>Worked example (using the accounts above)</summary>
-    <p>Gross margin = 200 ÷ 500 = <b>40%</b>. Net margin = 50 ÷ 500 = <b>10%</b>. ROCE = 60 ÷ 400 = <b>15%</b> (capital employed = equity + non-current liabilities). Current assets = 120, current liabilities = 60, so current ratio = <b>2.0</b>. Acid test = (120 − 40) ÷ 60 = <b>1.33</b>.</p></details>
-  <p><b>Profitability</b> ratios compare profit with revenue or capital. <b>Liquidity</b> ratios show if short-term debts can be paid. A current ratio of about 1.5 to 2 and an acid test near 1 are often seen as healthy, but it depends on the industry. Compare with past years and competitors.</p>
+<section class="panel" data-title="Cash flow" data-c="#EC4899">
+<h2>Cash flow forecasting</h2>
+<p><b>Cash</b> is money available now. <b>Profit</b> is revenue minus costs and can be unpaid. A profitable firm can fail when customers pay late and bills come first. This is a <b>liquidity</b> problem.</p>
+<div class="formulas"><div class="f">Net cash flow = inflows − outflows</div><div class="f">Closing = opening + net cash flow</div></div>
+<table class="wide"><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr>
+<tr><td>Opening balance</td><td>10,000</td><td>5,000</td><td>8,000</td></tr><tr><td>Inflows</td><td>40,000</td><td>45,000</td><td>38,000</td></tr>
+<tr><td>Outflows</td><td>45,000</td><td>42,000</td><td>44,000</td></tr><tr class="b"><td>Net cash flow</td><td>−5,000</td><td>3,000</td><td>−6,000</td></tr>
+<tr class="b"><td>Closing balance</td><td>5,000</td><td>8,000</td><td>2,000</td></tr></table>
+<p>January: 40,000 − 45,000 = −5,000, so the closing balance is 10,000 − 5,000 = 5,000. February opens with that 5,000. The balance is positive, but falling to 2,000 in March means a risk.</p>
+<div class="pc"><div class="pro"><h3>Advantages</h3><ul><li>Shows shortfalls early so action can be taken</li><li>Helps with bank loans and investor pitches</li><li>Helps with planning purchases and payments</li></ul></div>
+<div class="con"><h3>Limitations</h3><ul><li>Based on estimates, which can be wrong</li><li>Unexpected events (a supplier problem, a rival) break it</li><li>Needs updating regularly</li></ul></div></div>
+<p><b>Fixing a shortfall:</b> overdraft or short-term loan, chase receivables, delay payables, sell assets, cut costs. <b>Surplus:</b> invest, pay down debt, pay dividends.</p>
 </section>
 
-<section id="cashflow">
-  <h2>Cash flow forecasts</h2>
-  <p>Profit is not cash. A profitable firm can still fail if customers pay late and bills are due first.</p>
-  <div class="formulas">
-    <div class="f">Net cash flow = cash inflows − cash outflows</div>
-    <div class="f">Closing balance = opening balance + net cash flow</div>
-  </div>
-  <table class="wide"><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr>
-    <tr><td>Opening balance</td><td>10,000</td><td>5,000</td><td>8,000</td></tr>
-    <tr><td>Inflows</td><td>40,000</td><td>45,000</td><td>38,000</td></tr>
-    <tr><td>Outflows</td><td>45,000</td><td>42,000</td><td>44,000</td></tr>
-    <tr class="b"><td>Net cash flow</td><td>−5,000</td><td>3,000</td><td>−6,000</td></tr>
-    <tr class="b"><td>Closing balance</td><td>5,000</td><td>8,000</td><td>2,000</td></tr></table>
-  <p><b>Fixing a shortfall:</b> overdraft, chase receivables, delay payments, sell assets, cut costs.</p>
+<section class="panel" data-title="Investment appraisal" data-c="#14B8A6">
+<h2>Investment appraisal</h2>
+<p>Project: invest $100,000. Returns: Year 1 $30,000, Year 2 $40,000, Year 3 $50,000, Year 4 $40,000.</p>
+<div class="two"><div class="card"><h3>Payback period</h3><p>After year 2: 30 + 40 = 70,000 recovered. Still need 30,000, and year 3 brings 50,000. So 2 + 30 ÷ 50 = <b>2.6 years</b> (2 years 7 months, since 0.6 × 12 = 7.2).</p></div>
+<div class="card"><h3>Average rate of return (ARR)</h3><p>Total returns 160,000 − 100,000 = 60,000 profit. ÷ 4 years = 15,000 a year. 15,000 ÷ 100,000 × 100 = <b>15%</b>.</p></div></div>
+<div class="card"><h3>Net present value (NPV), discount rate 10%</h3><table class="wide"><tr><th>Year</th><th>Cash flow</th><th>Discount factor</th><th>Present value</th></tr>
+<tr><td>1</td><td>30,000</td><td>0.909</td><td>27,270</td></tr><tr><td>2</td><td>40,000</td><td>0.826</td><td>33,040</td></tr><tr><td>3</td><td>50,000</td><td>0.751</td><td>37,550</td></tr><tr><td>4</td><td>40,000</td><td>0.683</td><td>27,320</td></tr>
+<tr class="b"><td colspan="3">Total PV 125,180 − 100,000</td><td>NPV = 25,180</td></tr></table>
+<p>Money received later is worth less today, so each cash flow is multiplied by a discount factor from the table. A positive NPV means the project earns more than the discount rate and adds value.</p></div>
+<div class="pc"><div class="pro"><h3>Payback</h3><ul><li>Simple, favours quick returns</li><li>Good when cash or risk is a concern</li></ul><h3>ARR</h3><ul><li>Uses all returns, easy to compare with a target</li></ul><h3>NPV</h3><ul><li>Accounts for the time value of money</li><li>Uses all cash flows</li></ul></div>
+<div class="con"><h3>Payback</h3><ul><li>Ignores returns after payback and timing</li></ul><h3>ARR</h3><ul><li>Ignores the timing of cash flows</li></ul><h3>NPV</h3><ul><li>Depends on the chosen discount rate</li><li>More complex, forecasts may be wrong</li></ul></div></div>
+<p class="tip">Also consider qualitative factors: risk, ethics, the environment, effect on staff, and whether the forecasts are reliable.</p>
 </section>
 
-<section id="invest">
-  <h2>Investment appraisal</h2>
-  <p>Used to decide whether a project is worth the money. Example: invest $100,000, with returns of $30,000, $40,000, $50,000 and $40,000 over 4 years.</p>
-  <div class="formulas">
-    <div class="f">Payback = time to recover the initial investment</div>
-    <div class="f">ARR = average annual profit ÷ initial investment × 100</div>
-    <div class="f">NPV = sum of discounted cash flows − initial investment</div>
-  </div>
-  <div class="two">
-    <div class="card"><h3>Payback</h3><p>After year 2 you have recovered 70,000. Left: 30,000 of year 3's 50,000. So 2 + 30 ÷ 50 = <b>2.6 years</b> (about 2 years 7 months).</p></div>
-    <div class="card"><h3>ARR</h3><p>Total returns = 160,000. Profit = 60,000. Average = 15,000 per year. 15,000 ÷ 100,000 = <b>15%</b>.</p></div>
-  </div>
-  <div class="card"><h3>NPV at 10%</h3>
-    <table class="wide"><tr><th>Year</th><th>Cash flow</th><th>Discount factor</th><th>Present value</th></tr>
-    <tr><td>1</td><td>30,000</td><td>0.909</td><td>27,270</td></tr><tr><td>2</td><td>40,000</td><td>0.826</td><td>33,040</td></tr>
-    <tr><td>3</td><td>50,000</td><td>0.751</td><td>37,550</td></tr><tr><td>4</td><td>40,000</td><td>0.683</td><td>27,320</td></tr>
-    <tr class="b"><td colspan="3">Total PV − 100,000</td><td>NPV = 25,180</td></tr></table>
-    <p>A positive NPV means the project adds value. NPV accounts for the time value of money, but depends on the chosen discount rate.</p></div>
+<section class="panel" data-title="Budgets (HL)" data-c="#F97316">
+<h2>Budgets and variance analysis (HL)</h2>
+<p>A <b>budget</b> is a financial plan for a future period. It sets targets, controls spending, and lets managers delegate.</p>
+<div class="formulas"><div class="f">Variance = actual − budget</div></div>
+<p><b>Favourable (F):</b> better for profit (higher revenue or lower costs). <b>Adverse (A):</b> worse for profit (lower revenue or higher costs).</p>
+<table class="wide"><tr><th></th><th>Budget</th><th>Actual</th><th>Variance</th></tr>
+<tr><td>Revenue</td><td>100,000</td><td>92,000</td><td>8,000 A</td></tr><tr><td>Costs</td><td>70,000</td><td>75,000</td><td>5,000 A</td></tr>
+<tr class="b"><td>Profit</td><td>30,000</td><td>17,000</td><td>13,000 A</td></tr></table>
+<p>Revenue was 8,000 lower, which is bad. Costs were 5,000 higher, which is also bad. Total: 8,000 + 5,000 = <b>13,000 adverse</b>. Managers should investigate why.</p>
+<div class="pc"><div class="pro"><h3>Advantages</h3><ul><li>Gives clear targets and motivation</li><li>Helps control costs and spot problems</li><li>Helps allocate resources</li></ul></div>
+<div class="con"><h3>Disadvantages</h3><ul><li>Forecasts can be wrong, making budgets rigid</li><li>Can cause conflict between departments</li><li>Takes time, and managers may inflate costs</li></ul></div></div>
 </section>
 
-<section id="quiz">
-  <h2>Practice questions</h2>
-  <div id="quizBox"></div>
-  <p id="score" class="result"></p>
-  <button id="reset" class="btn">Try again</button>
+<section class="panel" data-title="Extra finance" data-c="#6366F1">
+<h2>Extra finance concepts</h2>
+<h3>Depreciation</h3>
+<p>Non-current assets lose value through wear and age. Depreciation spreads the cost over the useful life. Net book value = cost − accumulated depreciation.</p>
+<p><b>Straight line:</b> (cost − residual value) ÷ life. A $50,000 machine, residual $5,000, 5 years: (50,000 − 5,000) ÷ 5 = <b>$9,000 a year</b>.<br><b>Reducing balance (20%):</b> year 1 = 20% × 50,000 = 10,000, so NBV = 40,000. Year 2 = 20% × 40,000 = 8,000. The charge is higher early on.</p>
+<h3>Interest and the time value of money</h3>
+<p>Simple interest: $1,000 at 5% for 3 years = 3 × 50 = $150. Compound interest: 1,000 × 1.05³ = <b>$1,157.63</b>, because interest is earned on interest. This is why NPV discounts future money: $1 today can be invested to grow.</p>
+<h3>Other terms</h3>
+<ul><li><b>Intangible assets:</b> no physical form (patents, brands). <b>Goodwill</b> is the value above the net assets when a firm is bought.</li><li><b>Window dressing:</b> making accounts look better than they are (for example, delaying purchases before the year end). It is legal only if it stays within accounting rules, but it can be unethical.</li><li><b>Dividends:</b> profit paid to shareholders. <b>Retained profit:</b> kept in the business.</li><li><b>Inflation</b> reduces the real value of money, which affects budgets and investment returns.</li></ul>
 </section>
+
+<section class="panel" data-title="Practice questions" data-c="#0EA5E9">
+<h2>Practice questions with step-by-step working</h2>
+<p>Try each one on paper first, then open the working. These are written in IB style for practice. They are not copies of real past papers.</p>
+<div class="q"><h3>Q1. Break-even [4 marks]</h3><p>A firm has fixed costs of $90,000. It sells at $25 a unit and variable cost is $10 a unit. (a) Calculate the break-even output. (b) Calculate the profit if it sells 7,500 units.</p>
+<details><summary>Show working</summary><p><b>(a)</b> Contribution = 25 − 10 = $15. Break-even = 90,000 ÷ 15 = <b>6,000 units</b>.<br><b>(b)</b> Revenue = 7,500 × 25 = 187,500. Total cost = 90,000 + (7,500 × 10) = 165,000. Profit = 187,500 − 165,000 = <b>$22,500</b>.<br>Check: margin of safety = 1,500 units × $15 = $22,500 ✓.</p></details></div>
+<div class="q"><h3>Q2. Ratios [6 marks]</h3><p>Revenue $400k, cost of goods sold $240k, expenses $100k. Current assets $90k (including inventory $30k), current liabilities $60k. (a) Calculate the gross profit margin. (b) Calculate the operating profit margin. (c) Calculate the current ratio and the acid test ratio. (d) Comment on its liquidity.</p>
+<details><summary>Show working</summary><p><b>(a)</b> Gross profit = 400 − 240 = 160. 160 ÷ 400 × 100 = <b>40%</b>.<br><b>(b)</b> Operating profit = 160 − 100 = 60. 60 ÷ 400 × 100 = <b>15%</b>.<br><b>(c)</b> Current ratio = 90 ÷ 60 = <b>1.5</b>. Acid test = (90 − 30) ÷ 60 = <b>1.0</b>.<br><b>(d)</b> A current ratio of 1.5 and an acid test of 1.0 suggest the firm can just meet its short-term debts without selling inventory. It is acceptable, but with little room for error. It should be compared with competitors and past years.</p></details></div>
+<div class="q"><h3>Q3. Investment appraisal [6 marks]</h3><p>A project costs $80,000. Returns: Year 1 $20,000, Year 2 $30,000, Year 3 $40,000, Year 4 $30,000. (a) Calculate the payback period. (b) Calculate the ARR. (c) Explain one limitation of using payback.</p>
+<details><summary>Show working</summary><p><b>(a)</b> After year 2: 20 + 30 = 50,000. Remaining = 30,000 out of year 3's 40,000. 30 ÷ 40 = 0.75. Payback = <b>2.75 years</b> (2 years 9 months).<br><b>(b)</b> Total returns = 120,000. Profit = 120,000 − 80,000 = 40,000. Average = 40,000 ÷ 4 = 10,000. ARR = 10,000 ÷ 80,000 × 100 = <b>12.5%</b>.<br><b>(c)</b> Payback ignores cash flows after the payback point (here, Year 4's $30,000), so a project with large later returns could be wrongly rejected.</p></details></div>
+</section>
+
 </main>
-<footer>Study notes by a student. Always check against your IB syllabus and teacher.</footer>
+<footer>Study notes. Check against your IB Business Management guide and teacher.</footer>
 <script src="script.js"></script>
 </body>
 </html>
