@@ -1,129 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A professional educational library for learning finance.">
-    <title>Finance | Field Notes</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance &amp; Accounts | IB Business Unit 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header class="navbar">
-    <a href="#" class="logo">FINANCE <span>/</span> FIELD NOTES</a>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#library">Library</a>
-        <a href="#about">About</a>
-    </nav>
+<header class="top">
+  <strong>Unit 3 Finance</strong>
+  <nav>
+    <a href="#sources">Sources</a><a href="#costs">Costs</a><a href="#breakeven">Break-even</a>
+    <a href="#accounts">Accounts</a><a href="#ratios">Ratios</a><a href="#cashflow">Cash flow</a>
+    <a href="#invest">Investment</a><a href="#quiz">Quiz</a>
+  </nav>
 </header>
 
 <main>
-
-    <section class="hero" id="home">
-        <p class="eyebrow">AN INDEPENDENT FINANCIAL KNOWLEDGE LIBRARY</p>
-
-        <h1>Explore finance.<br>Build your knowledge.</h1>
-
-        <p class="hero-description">
-            Explore financial concepts, investment banking,
-            financial markets and the principles behind
-            financial decision-making.
-        </p>
-
-        <a href="#library" class="primary-button">Explore the library →</a>
-
-        <div class="hero-bottom">
-            <span>EDUCATION</span>
-            <span>RESEARCH</span>
-            <span>FINANCIAL KNOWLEDGE</span>
-        </div>
-    </section>
-
-    <section class="intro">
-        <div>
-            <p class="eyebrow">THE COLLECTION</p>
-            <h2>Financial knowledge,<br>organised.</h2>
-        </div>
-
-        <p>
-            A structured educational resource designed to
-            make complex financial concepts easier to
-            understand and explore.
-        </p>
-    </section>
-
-    <section class="library" id="library">
-
-        <div class="section-heading">
-            <div>
-                <p class="eyebrow">EXPLORE THE COLLECTION</p>
-                <h2>Knowledge Library</h2>
-            </div>
-            <span id="note-count">00 ARTICLES</span>
-        </div>
-
-        <div class="search-box">
-            <span>⌕</span>
-            <input
-                type="search"
-                id="search-input"
-                placeholder="Search finance topics and concepts..."
-                aria-label="Search finance articles"
-            >
-        </div>
-
-        <div class="filters">
-            <button class="filter-button active" data-filter="All">All topics</button>
-            <button class="filter-button" data-filter="Fundamentals">Fundamentals</button>
-            <button class="filter-button" data-filter="Markets">Financial markets</button>
-            <button class="filter-button" data-filter="Banking">Banking</button>
-            <button class="filter-button" data-filter="Corporate Finance">Corporate finance</button>
-        </div>
-
-        <div class="notes-grid" id="notes-grid"></div>
-
-        <p id="empty-message" hidden>
-            No articles found. Try another search.
-        </p>
-
-    </section>
-
-    <section class="about" id="about">
-        <p class="eyebrow">ABOUT THIS PLATFORM</p>
-
-        <h2>Knowledge is the<br><span>foundation.</span></h2>
-
-        <p>
-            Finance / Field Notes is an independent educational
-            project dedicated to exploring financial concepts,
-            markets and institutions.
-        </p>
-
-        <p>
-            The objective is to build a structured library
-            of knowledge for continuous learning.
-        </p>
-    </section>
-
-</main>
-
-<footer>
-    <a href="#" class="logo">FINANCE <span>/</span> FIELD NOTES
-    <p>AN INDEPENDENT FINANCIAL EDUCATION PROJECT</p>
-    <p>© <span id="year"></span> Finance / Field Notes</p>
-</footer>
-
-<dialog id="article-dialog">
-    <div class="dialog-header">
-        <span>FINANCE <span>/</span> KNOWLEDGE ARCHIVE
-        <button id="close-dialog" aria-label="Close article">✕</button>
+<section class="hero">
+  <div>
+    <h1>Where does the money come from, and where does it go?</h1>
+    <p>IB Business Management, Unit 3: Finance and Accounts. Notes, formulas, worked examples and practice questions. Start by moving the sliders to see how a business breaks even.</p>
+  </div>
+  <div class="card chart-card">
+    <canvas id="beChart" width="640" height="380" aria-label="Break-even chart"></canvas>
+    <div class="sliders">
+      <label>Price per unit: $<output id="oP">20</output><input id="sP" type="range" min="5" max="50" value="20"></label>
+      <label>Variable cost per unit: $<output id="oV">8</output><input id="sV" type="range" min="1" max="40" value="8"></label>
+      <label>Fixed costs: $<output id="oF">60000</output><input id="sF" type="range" min="10000" max="150000" step="5000" value="60000"></label>
     </div>
-    <div id="article-content"></div>
-</dialog>
+    <p id="beText" class="result"></p>
+  </div>
+</section>
 
+<section id="sources">
+  <h2>Sources of finance</h2>
+  <p>Businesses need finance to start up, run day to day (working capital) and grow (capital expenditure).</p>
+  <div class="two">
+    <div class="card"><h3>Internal</h3><ul><li><b>Retained profit:</b> profit reinvested. Cheap, but limited by profit.</li><li><b>Sale of assets:</b> raises cash quickly, but the asset is lost.</li><li><b>Personal funds:</b> owner's savings.</li></ul></div>
+    <div class="card"><h3>External</h3><ul><li><b>Share capital:</b> sell shares. No repayment, but ownership is diluted.</li><li><b>Loan capital:</b> borrow and repay with interest.</li><li><b>Overdraft:</b> short-term, flexible, high interest.</li><li><b>Trade credit, leasing, crowdfunding, venture capital.</b></li></ul></div>
+  </div>
+  <p class="tip">Short-term needs (stock, wages) suit short-term finance. Long-term needs (buildings, machinery) suit long-term finance.</p>
+</section>
+
+<section id="costs">
+  <h2>Costs and revenue</h2>
+  <div class="formulas">
+    <div class="f">Total cost (TC) = FC + VC</div>
+    <div class="f">Total revenue (TR) = P × Q</div>
+    <div class="f">Profit = TR − TC</div>
+    <div class="f">Average cost = TC ÷ Q</div>
+  </div>
+  <div class="two">
+    <div class="card"><h3>Fixed costs</h3><p>Do not change with output in the short run: rent, salaries, insurance.</p></div>
+    <div class="card"><h3>Variable costs</h3><p>Change directly with output: raw materials, packaging, piece-rate pay.</p></div>
+  </div>
+  <p>Direct costs link to a specific product. Indirect (overhead) costs cannot easily be traced to one product.</p>
+</section>
+
+<section id="breakeven">
+  <h2>Break-even analysis</h2>
+  <p>The break-even point is the output where total revenue equals total cost, so profit is zero. It is the crossing point in the chart above.</p>
+  <div class="formulas">
+    <div class="f">Contribution per unit = P − VC</div>
+    <div class="f">Break-even output = FC ÷ (P − VC)</div>
+    <div class="f">Margin of safety = actual output − break-even output</div>
+    <div class="f">Target output = (FC + target profit) ÷ (P − VC)</div>
+  </div>
+  <details><summary>Worked example</summary>
+    <p>P = $20, VC = $8, FC = $60,000. Contribution = 20 − 8 = $12. Break-even = 60,000 ÷ 12 = <b>5,000 units</b>. If the business sells 6,500 units, the margin of safety is 1,500 units. For a $24,000 profit: (60,000 + 24,000) ÷ 12 = 7,000 units.</p></details>
+  <p><b>Strengths:</b> simple, helps with planning and loans. <b>Limitations:</b> assumes straight lines, all output is sold, and costs and prices stay constant.</p>
+</section>
+
+<section id="accounts">
+  <h2>Final accounts</h2>
+  <p>Final accounts show a firm's financial performance and position. The accounting equation always balances:</p>
+  <div class="formulas"><div class="f">Assets = Liabilities + Equity</div></div>
+  <div class="two">
+    <div class="card"><h3>Income statement (over a period)</h3>
+      <table><tr><td>Revenue</td><td>500,000</td></tr><tr><td>− Cost of goods sold</td><td>300,000</td></tr><tr class="b"><td>Gross profit</td><td>200,000</td></tr><tr><td>− Expenses</td><td>140,000</td></tr><tr class="b"><td>Operating profit</td><td>60,000</td></tr><tr><td>− Interest and tax</td><td>10,000</td></tr><tr class="b"><td>Net profit</td><td>50,000</td></tr></table></div>
+    <div class="card"><h3>Balance sheet (on one date)</h3>
+      <table><tr class="b"><td>Non-current assets</td><td>340,000</td></tr><tr><td>Inventory</td><td>40,000</td></tr><tr><td>Receivables and cash</td><td>80,000</td></tr><tr class="b"><td>Total assets</td><td>460,000</td></tr><tr><td>Current liabilities</td><td>60,000</td></tr><tr><td>Non-current liabilities</td><td>100,000</td></tr><tr class="b"><td>Equity</td><td>300,000</td></tr></table></div>
+  </div>
+  <p class="tip">Depreciation spreads the cost of a non-current asset over its useful life. Straight line: (cost − residual value) ÷ useful life.</p>
+</section>
+
+<section id="ratios">
+  <h2>Ratio analysis</h2>
+  <div class="formulas">
+    <div class="f">Gross profit margin = gross profit ÷ revenue × 100</div>
+    <div class="f">Net profit margin = net profit ÷ revenue × 100</div>
+    <div class="f">ROCE = operating profit ÷ capital employed × 100</div>
+    <div class="f">Current ratio = current assets ÷ current liabilities</div>
+    <div class="f">Acid test = (current assets − inventory) ÷ current liabilities</div>
+  </div>
+  <details><summary>Worked example (using the accounts above)</summary>
+    <p>Gross margin = 200 ÷ 500 = <b>40%</b>. Net margin = 50 ÷ 500 = <b>10%</b>. ROCE = 60 ÷ 400 = <b>15%</b> (capital employed = equity + non-current liabilities). Current assets = 120, current liabilities = 60, so current ratio = <b>2.0</b>. Acid test = (120 − 40) ÷ 60 = <b>1.33</b>.</p></details>
+  <p><b>Profitability</b> ratios compare profit with revenue or capital. <b>Liquidity</b> ratios show if short-term debts can be paid. A current ratio of about 1.5 to 2 and an acid test near 1 are often seen as healthy, but it depends on the industry. Compare with past years and competitors.</p>
+</section>
+
+<section id="cashflow">
+  <h2>Cash flow forecasts</h2>
+  <p>Profit is not cash. A profitable firm can still fail if customers pay late and bills are due first.</p>
+  <div class="formulas">
+    <div class="f">Net cash flow = cash inflows − cash outflows</div>
+    <div class="f">Closing balance = opening balance + net cash flow</div>
+  </div>
+  <table class="wide"><tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th></tr>
+    <tr><td>Opening balance</td><td>10,000</td><td>5,000</td><td>8,000</td></tr>
+    <tr><td>Inflows</td><td>40,000</td><td>45,000</td><td>38,000</td></tr>
+    <tr><td>Outflows</td><td>45,000</td><td>42,000</td><td>44,000</td></tr>
+    <tr class="b"><td>Net cash flow</td><td>−5,000</td><td>3,000</td><td>−6,000</td></tr>
+    <tr class="b"><td>Closing balance</td><td>5,000</td><td>8,000</td><td>2,000</td></tr></table>
+  <p><b>Fixing a shortfall:</b> overdraft, chase receivables, delay payments, sell assets, cut costs.</p>
+</section>
+
+<section id="invest">
+  <h2>Investment appraisal</h2>
+  <p>Used to decide whether a project is worth the money. Example: invest $100,000, with returns of $30,000, $40,000, $50,000 and $40,000 over 4 years.</p>
+  <div class="formulas">
+    <div class="f">Payback = time to recover the initial investment</div>
+    <div class="f">ARR = average annual profit ÷ initial investment × 100</div>
+    <div class="f">NPV = sum of discounted cash flows − initial investment</div>
+  </div>
+  <div class="two">
+    <div class="card"><h3>Payback</h3><p>After year 2 you have recovered 70,000. Left: 30,000 of year 3's 50,000. So 2 + 30 ÷ 50 = <b>2.6 years</b> (about 2 years 7 months).</p></div>
+    <div class="card"><h3>ARR</h3><p>Total returns = 160,000. Profit = 60,000. Average = 15,000 per year. 15,000 ÷ 100,000 = <b>15%</b>.</p></div>
+  </div>
+  <div class="card"><h3>NPV at 10%</h3>
+    <table class="wide"><tr><th>Year</th><th>Cash flow</th><th>Discount factor</th><th>Present value</th></tr>
+    <tr><td>1</td><td>30,000</td><td>0.909</td><td>27,270</td></tr><tr><td>2</td><td>40,000</td><td>0.826</td><td>33,040</td></tr>
+    <tr><td>3</td><td>50,000</td><td>0.751</td><td>37,550</td></tr><tr><td>4</td><td>40,000</td><td>0.683</td><td>27,320</td></tr>
+    <tr class="b"><td colspan="3">Total PV − 100,000</td><td>NPV = 25,180</td></tr></table>
+    <p>A positive NPV means the project adds value. NPV accounts for the time value of money, but depends on the chosen discount rate.</p></div>
+</section>
+
+<section id="quiz">
+  <h2>Practice questions</h2>
+  <div id="quizBox"></div>
+  <p id="score" class="result"></p>
+  <button id="reset" class="btn">Try again</button>
+</section>
+</main>
+<footer>Study notes by a student. Always check against your IB syllabus and teacher.</footer>
+<script src="script.js"></script>
 </body>
 </html>
