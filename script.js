@@ -1,418 +1,118 @@
-// FINANCE / FIELD NOTES
-// Educational finance article collection
+/* ---------- Break-even chart ---------- */
+const cv = document.getElementById("beChart");
+const ctx = cv.getContext("2d");
+const $ = (id) => document.getElementById(id);
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 
+function drawChart() {
+  const P = +$("sP").value, V = +$("sV").value, F = +$("sF").value;
+  $("oP").textContent = P; $("oV").textContent = V; $("oF").textContent = F;
 
-// 1. ARTICLES
+  const W = cv.width, H = cv.height, m = { l: 70, r: 20, t: 20, b: 45 };
+  const maxQ = 12000;
+  const maxY = Math.max(P * maxQ, F + V * maxQ);
+  const x = (q) => m.l + (q / maxQ) * (W - m.l - m.r);
+  const y = (v) => H - m.b - (v / maxY) * (H - m.t - m.b);
 
-const notes = [
+  ctx.clearRect(0, 0, W, H);
+  ctx.font = "15px DM Sans, sans-serif";
+  ctx.lineWidth = 1; ctx.strokeStyle = css("--line"); ctx.fillStyle = css("--muted");
 
-{
-    id: 1,
-    title: "Understanding Financial Statements",
-    category: "Fundamentals",
-    description: "Learn how companies report their financial performance and position.",
-    sections: [
-        {
-            heading: "What are financial statements?",
-            text: "Financial statements are formal reports that communicate a company's financial activities and position. Investors, creditors and managers use them to evaluate performance and make decisions."
-        },
-        {
-            heading: "The three main statements",
-            bullets: [
-                "Income Statement: Reports revenue, expenses and profit or loss.",
-                "Balance Sheet: Shows assets, liabilities and shareholders' equity.",
-                "Cash Flow Statement: Tracks cash entering and leaving a business."
-            ]
-        },
-        {
-            heading: "Why do they matter?",
-            text: "Together, these statements help users understand whether a business is profitable, financially stable and capable of generating cash."
-        }
-    ],
-    example: "A business may report a profit but still experience cash shortages. This is why examining all three financial statements is important."
-},
+  // grid + axis labels
+  for (let i = 0; i <= 4; i++) {
+    const v = (maxY / 4) * i;
+    ctx.beginPath(); ctx.moveTo(m.l, y(v)); ctx.lineTo(W - m.r, y(v)); ctx.stroke();
+    ctx.textAlign = "right"; ctx.fillText("$" + Math.round(v / 1000) + "k", m.l - 8, y(v) + 5);
+  }
+  ctx.textAlign = "center";
+  for (let q = 0; q <= maxQ; q += 3000) ctx.fillText(q, x(q), H - m.b + 22);
+  ctx.fillText("Output (units)", (W + m.l) / 2, H - 6);
 
-{
-    id: 2,
-    title: "Time Value of Money",
-    category: "Fundamentals",
-    description: "Understand why money today can be worth more than the same amount in the future.",
-    sections: [
-        {
-            heading: "What is the time value of money?",
-            text: "The time value of money is the principle that money available today can be more valuable than the same amount received in the future, because today's money can potentially earn a return."
-        },
-        {
-            heading: "Present value and future value",
-            bullets: [
-                "Present Value (PV): The value today of a future amount.",
-                "Future Value (FV): The value money today may grow to.",
-                "Interest Rate: The rate at which money grows or is discounted."
-            ]
-        },
-        {
-            heading: "The formula",
-            text: "FV = PV × (1 + r)ⁿ. This calculates future value using compound interest for a single investment."
-        }
-    ],
-    example: "If $1,000 earns 5% annual interest for one year, its future value is $1,050."
-},
+  const line = (color, f, dash) => {
+    ctx.beginPath(); ctx.setLineDash(dash || []); ctx.lineWidth = 3; ctx.strokeStyle = color;
+    ctx.moveTo(x(0), y(f(0))); ctx.lineTo(x(maxQ), y(f(maxQ))); ctx.stroke(); ctx.setLineDash([]);
+  };
+  const gold = css("--gold"), berry = css("--berry"), sage = css("--sage");
+  line(gold, () => F, [8, 6]);          // fixed costs
+  line(berry, (q) => F + V * q);        // total costs
+  line(sage, (q) => P * q);             // total revenue
 
-{
-    id: 3,
-    title: "Understanding Compound Interest",
-    category: "Fundamentals",
-    description: "Discover how interest accumulates on both principal and previously earned interest.",
-    sections: [
-        {
-            heading: "What is compound interest?",
-            text: "Compound interest is interest calculated on the original principal and on interest accumulated during previous periods."
-        },
-        {
-            heading: "The formula",
-            text: "A = P(1 + r/n)ⁿᵗ"
-        },
-        {
-            heading: "Understanding the variables",
-            bullets: [
-                "A = Final accumulated amount.",
-                "P = Initial principal.",
-                "r = Annual interest rate as a decimal.",
-                "n = Compounding periods per year.",
-                "t = Number of years."
-            ]
-        }
-    ],
-    example: "An initial investment of $1,000 earning 5% annually for 10 years, compounded annually, grows to approximately $1,628.89 before taxes and fees."
-},
+  // legend
+  ctx.textAlign = "left";
+  [["Total revenue", sage], ["Total cost", berry], ["Fixed cost", gold]].forEach(([t, c], i) => {
+    ctx.fillStyle = c; ctx.fillRect(m.l + 10 + i * 130, m.t + 4, 14, 14);
+    ctx.fillStyle = css("--ink"); ctx.fillText(t, m.l + 30 + i * 130, m.t + 16);
+  });
 
-{
-    id: 4,
-    title: "Stocks vs Bonds",
-    category: "Markets",
-    description: "Explore two major financial instruments and understand their differences.",
-    sections: [
-        {
-            heading: "What are stocks?",
-            text: "A stock represents ownership in a company. Shareholders may benefit from increases in share prices and dividends, although neither is guaranteed."
-        },
-        {
-            heading: "What are bonds?",
-            text: "A bond is a debt instrument. An investor lends money to an issuer, which generally promises interest payments and repayment of principal according to the bond's terms."
-        },
-        {
-            heading: "Key differences",
-            bullets: [
-                "Stocks represent ownership; bonds represent lending.",
-                "Stock returns can include dividends and capital gains.",
-                "Bond returns can include coupon payments.",
-                "Both can lose value and carry different risks."
-            ]
-        }
-    ],
-    example: "Buying shares makes you a shareholder. Buying a company's bonds makes you a creditor of that company."
-},
-
-{
-    id: 5,
-    title: "Introduction to Investment Banking",
-    category: "Banking",
-    description: "Explore how investment banks help businesses raise capital and complete transactions.",
-    sections: [
-        {
-            heading: "What is investment banking?",
-            text: "Investment banking is a financial service that supports corporations, governments and other institutions with complex financial transactions."
-        },
-        {
-            heading: "Main activities",
-            bullets: [
-                "Mergers and Acquisitions (M&A): Advising businesses on buying, selling or combining companies.",
-                "Equity Capital Markets (ECM): Helping companies raise money by issuing shares.",
-                "Debt Capital Markets (DCM): Helping organisations raise money through debt securities.",
-                "Underwriting: Supporting the issuance and distribution of securities."
-            ]
-        },
-        {
-            heading: "Why is it important?",
-            text: "Investment banks connect organisations that need capital with investors who are willing to provide it. They also advise on strategic transactions."
-        }
-    ],
-    example: "A company planning to expand internationally may hire an investment bank to advise on acquiring a competitor."
-},
-
-{
-    id: 6,
-    title: "Risk and Diversification",
-    category: "Markets",
-    description: "Understand investment risk and why spreading investments can matter.",
-    sections: [
-        {
-            heading: "What is investment risk?",
-            text: "Investment risk refers to the possibility that an investment's actual outcome differs from what was expected, including the possibility of losing capital."
-        },
-        {
-            heading: "What is diversification?",
-            text: "Diversification means spreading investments across different assets, industries or markets rather than concentrating everything in one investment."
-        },
-        {
-            heading: "Types of risk",
-            bullets: [
-                "Market Risk: Losses caused by movements in financial markets.",
-                "Credit Risk: The possibility that a borrower fails to repay.",
-                "Liquidity Risk: The difficulty of selling an asset quickly at a reasonable price.",
-                "Interest Rate Risk: The possibility that changing interest rates affect investment values."
-            ]
-        }
-    ],
-    example: "An investor holding investments across several industries may be less exposed to the problems of a single company. Diversification does not eliminate risk."
-},
-
-{
-    id: 7,
-    title: "Corporate Finance",
-    category: "Corporate Finance",
-    description: "Learn how organisations make decisions about investments and financial resources.",
-    sections: [
-        {
-            heading: "What is corporate finance?",
-            text: "Corporate finance focuses on how businesses obtain, allocate and manage financial resources to support operations and long-term objectives."
-        },
-        {
-            heading: "Three fundamental decisions",
-            bullets: [
-                "Investment Decisions: Choosing which projects and assets to invest in.",
-                "Financing Decisions: Choosing how to fund activities through debt, equity or other sources.",
-                "Dividend Decisions: Deciding how much profit to distribute to shareholders and how much to retain."
-            ]
-        },
-        {
-            heading: "The objective",
-            text: "A central objective in corporate finance is creating long-term value while considering an organisation's financial position and stakeholders."
-        }
-    ],
-    example: "A company considering a new factory must estimate its investment cost, expected cash flows and risks before proceeding."
-},
-
-{
-    id: 8,
-    title: "Introduction to Company Valuation",
-    category: "Corporate Finance",
-    description: "Explore how analysts estimate the economic value of a company.",
-    sections: [
-        {
-            heading: "What is company valuation?",
-            text: "Company valuation is the process of estimating the economic value of a business. It is used in investment analysis, mergers and acquisitions and financial planning."
-        },
-        {
-            heading: "Common valuation methods",
-            bullets: [
-                "Discounted Cash Flow (DCF): Estimates value using projected future cash flows discounted to the present.",
-                "Comparable Company Analysis: Compares a business with similar publicly traded companies.",
-                "Precedent Transactions: Uses valuations implied by previous comparable transactions."
-            ]
-        },
-        {
-            heading: "Why is valuation important?",
-            text: "Valuation helps investors and companies assess financial opportunities, compare businesses and evaluate potential transactions."
-        }
-    ],
-    example: "An analyst may compare a company's enterprise value to its EBITDA to assess its valuation relative to similar businesses."
+  const out = $("beText");
+  if (P <= V) {
+    out.textContent = "Price is not above variable cost, so this business never breaks even.";
+    return;
+  }
+  const beq = F / (P - V);
+  out.textContent = `Contribution = $${P - V} per unit. Break-even = ${F} ÷ ${P - V} = ${Math.ceil(beq).toLocaleString()} units.`;
+  if (beq <= maxQ) {
+    ctx.beginPath(); ctx.arc(x(beq), y(P * beq), 8, 0, 7);
+    ctx.fillStyle = css("--ink"); ctx.fill();
+    ctx.setLineDash([4, 4]); ctx.lineWidth = 1.5; ctx.strokeStyle = css("--ink");
+    ctx.beginPath(); ctx.moveTo(x(beq), y(P * beq)); ctx.lineTo(x(beq), H - m.b); ctx.stroke(); ctx.setLineDash([]);
+  }
 }
+["sP", "sV", "sF"].forEach((id) => $(id).addEventListener("input", drawChart));
+drawChart();
 
+/* ---------- Quiz ---------- */
+const questions = [
+  { q: "Fixed costs are $30,000, price is $15 and variable cost is $9 per unit. What is the break-even output?",
+    o: ["2,000 units", "3,333 units", "5,000 units", "7,500 units"], a: 2,
+    e: "Contribution = 15 − 9 = 6. Break-even = 30,000 ÷ 6 = 5,000 units." },
+  { q: "Which of these is an internal source of finance?",
+    o: ["Bank loan", "Retained profit", "Share issue", "Overdraft"], a: 1,
+    e: "Retained profit comes from inside the business. The others are external." },
+  { q: "Revenue is $80,000 and cost of goods sold is $50,000. What is gross profit?",
+    o: ["$30,000", "$50,000", "$130,000", "$37,500"], a: 0,
+    e: "Gross profit = revenue − cost of goods sold = 80,000 − 50,000." },
+  { q: "Net profit is $12,000 on revenue of $150,000. What is the net profit margin?",
+    o: ["12%", "8%", "1.25%", "18%"], a: 1,
+    e: "12,000 ÷ 150,000 × 100 = 8%." },
+  { q: "Current assets are $120,000, inventory is $40,000 and current liabilities are $80,000. What is the acid test ratio?",
+    o: ["0.5", "1.0", "1.5", "2.0"], a: 1,
+    e: "(120,000 − 40,000) ÷ 80,000 = 1.0." },
+  { q: "A firm has an opening cash balance of $8,000 and a net cash flow of −$3,000. What is the closing balance?",
+    o: ["$11,000", "−$3,000", "$5,000", "$8,000"], a: 2,
+    e: "Closing = opening + net cash flow = 8,000 − 3,000 = 5,000." },
+  { q: "A project costs $50,000 and returns $20,000 a year. What is the payback period?",
+    o: ["2 years", "2.5 years", "3 years", "2.25 years"], a: 1,
+    e: "After 2 years you have 40,000. The last 10,000 takes half of year 3, so 2.5 years." },
+  { q: "Which is a limitation of break-even analysis?",
+    o: ["It cannot show the margin of safety", "It assumes all output is sold at a constant price",
+        "It ignores fixed costs", "It only works for large firms"], a: 1,
+    e: "The model assumes straight-line costs and revenue, and that everything produced is sold." }
 ];
 
-
-// 2. FIND WEBSITE ELEMENTS
-
-const notesGrid = document.getElementById("notes-grid");
-const searchInput = document.getElementById("search-input");
-const filterButtons = document.querySelectorAll(".filter-button");
-const emptyMessage = document.getElementById("empty-message");
-const noteCount = document.getElementById("note-count");
-
-const dialog = document.getElementById("article-dialog");
-const articleContent = document.getElementById("article-content");
-const closeDialog = document.getElementById("close-dialog");
-
-let activeCategory = "All";
-
-
-// 3. DISPLAY ARTICLES
-
-function displayNotes() {
-
-    const searchTerm = searchInput.value.toLowerCase().trim();
-
-    const filteredNotes = notes.filter(note => {
-
-        const matchesCategory =
-            activeCategory === "All" ||
-            note.category === activeCategory;
-
-        const searchableText = [
-            note.title,
-            note.category,
-            note.description,
-            ...note.sections.map(section => section.text || ""),
-            ...note.sections.flatMap(section => section.bullets || [])
-        ].join(" ").toLowerCase();
-
-        return matchesCategory &&
-               searchableText.includes(searchTerm);
+let answered = 0, correct = 0;
+function renderQuiz() {
+  answered = 0; correct = 0; $("score").textContent = "";
+  const box = $("quizBox"); box.innerHTML = "";
+  questions.forEach((item, qi) => {
+    const wrap = document.createElement("div"); wrap.className = "q";
+    wrap.innerHTML = `<p>${qi + 1}. ${item.q}</p>`;
+    const why = document.createElement("p"); why.className = "why"; why.hidden = true; why.textContent = item.e;
+    item.o.forEach((text, oi) => {
+      const b = document.createElement("button"); b.className = "opt"; b.textContent = text;
+      b.addEventListener("click", () => {
+        wrap.querySelectorAll(".opt").forEach((x) => (x.disabled = true));
+        const ok = oi === item.a;
+        b.classList.add(ok ? "right" : "wrong");
+        if (!ok) wrap.querySelectorAll(".opt")[item.a].classList.add("right");
+        why.hidden = false; answered++; if (ok) correct++;
+        if (answered === questions.length)
+          $("score").textContent = `You scored ${correct} out of ${questions.length}.`;
+      });
+      wrap.appendChild(b);
     });
-
-    notesGrid.innerHTML = filteredNotes.map(note => `
-
-        <article class="note-card">
-
-            <div class="card-top">
-                <span class="card-category">${note.category}</span>
-                <span class="card-number">
-                    ${String(note.id).padStart(2, "0")}
-                </span>
-            </div>
-
-            <h3>${note.title}</h3>
-
-            <p>${note.description}</p>
-
-            <button
-                class="read-link"
-                data-note-id="${note.id}"
-                type="button"
-            >
-                READ ARTICLE →
-            </button>
-
-        </article>
-
-    `).join("");
-
-    noteCount.textContent =
-        `${String(filteredNotes.length).padStart(2, "0")} ARTICLES`;
-
-    emptyMessage.hidden = filteredNotes.length !== 0;
+    wrap.appendChild(why); box.appendChild(wrap);
+  });
 }
-
-
-// 4. SEARCH FUNCTION
-
-searchInput.addEventListener("input", displayNotes);
-
-
-// 5. CATEGORY FILTERS
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        activeCategory = button.dataset.filter;
-
-        filterButtons.forEach(filter => {
-            filter.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        displayNotes();
-
-    });
-
-});
-
-
-// 6. OPEN ARTICLES
-
-function openArticle(noteId) {
-
-    const note = notes.find(
-        item => item.id === Number(noteId)
-    );
-
-    if (!note) return;
-
-    const sectionsHTML = note.sections.map(section => {
-
-        let content = "";
-
-        if (section.text) {
-            content += `<p>${section.text}</p>`;
-        }
-
-        if (section.bullets) {
-            content += `
-                <ul>
-                    ${section.bullets.map(item =>
-                        `<li>${item}</li>`
-                    ).join("")}
-                </ul>
-            `;
-        }
-
-        return `
-            <section class="article-section">
-                <h3>${section.heading}</h3>
-                ${content}
-            </section>
-        `;
-
-    }).join("");
-
-    articleContent.innerHTML = `
-
-        <p class="article-category">${note.category}</p>
-
-        <h1 class="article-title">${note.title}</h1>
-
-        <p>${note.description}</p>
-
-        ${sectionsHTML}
-
-        <div class="article-example">
-            <strong>PRACTICAL EXAMPLE</strong>
-            <p>${note.example}</p>
-        </div>
-
-    `;
-
-    dialog.showModal();
-}
-
-
-// 7. LISTEN FOR ARTICLE CLICKS
-
-notesGrid.addEventListener("click", event => {
-
-    const button = event.target.closest("[data-note-id]");
-
-    if (!button) return;
-
-    openArticle(button.dataset.noteId);
-
-});
-
-
-// 8. CLOSE ARTICLES
-
-closeDialog.addEventListener("click", () => {
-    dialog.close();
-});
-
-dialog.addEventListener("click", event => {
-
-    if (event.target === dialog) {
-        dialog.close();
-    }
-
-});
-
-
-// 9. COPYRIGHT YEAR
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-// 10. START THE WEBSITE
-
-displayNotes();
+$("reset").addEventListener("click", renderQuiz);
+renderQuiz();
